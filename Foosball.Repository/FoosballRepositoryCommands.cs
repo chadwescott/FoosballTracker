@@ -1,0 +1,34 @@
+﻿using System.Collections.Generic;
+using Foosball.Domain.Command;
+using Foosball.Domain.Model;
+using Foosball.Repository.Command;
+using Foosball.Repository.Factory;
+
+namespace Foosball.Repository
+{
+    public class FoosballRepositoryCommands
+    {
+        private readonly CommandExecuter _executer = new CommandExecuter();
+
+        public IEnumerable<IGame> GetGames()
+        {
+            var command = new GetGames();
+            _executer.Execute(command);
+            return command.Result;
+        }
+
+        public IEnumerable<IPlayer> GetPlayers()
+        {
+            var command = new GetPlayers();
+            _executer.Execute(command);
+            return command.Result;
+        }
+
+        public IGame SaveGame(IGame game)
+        {
+            var command = new SaveGame(GameFactory.MakeGame(game));
+            _executer.Execute(command);
+            return command.Result;
+        }
+    }
+}
