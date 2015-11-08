@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Foosball.Domain.Model.IGame>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Results</h2>
+
+@*<div class="table table-striped">
+    
+</div>*@
+<table class="table table-striped">   
+    <thead>
+        <tr>
+            <th>Timestamp</th>
+            <th>Player 1</th>
+            <th>Score</th>
+            <th>Player 2</th>
+            <th>Score</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var game in Model)
+    {
+        <tr>
+            <td>@game.Timestamp</td>
+            <td>@game.Player1.FirstName</td>
+            <td>@game.Player1Score</td>
+            <td>@game.Player2.FirstName</td>
+            <td>@game.Player2Score</td>
+        </tr>
+    }
+    </tbody>
+</table>
