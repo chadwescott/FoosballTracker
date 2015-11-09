@@ -17,6 +17,13 @@ namespace Foosball.Repository
             return command.Result;
         }
 
+        public IEnumerable<IPlayerRecord> GetPlayerRecords()
+        {
+            var command = new GetPlayerRecords();
+            _executer.Execute(command);
+            return command.Result;
+        }
+
         public IEnumerable<IPlayer> GetPlayers()
         {
             var command = new GetPlayers();

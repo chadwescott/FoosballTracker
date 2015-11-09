@@ -1,0 +1,63 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Results</h2>
+<div id="resultsGrid" style="height: 450px"></div>
+
+<script>
+    $(function() {
+        $('#resultsGrid').w2grid({
+            name: 'resultsGrid',
+            url: '@Url.RouteUrl("DefaultApi", new { httproute = "", controller = "GameResultGrid" })',
+            autoLoad: true,
+            limit: 500,
+            msgRefresh: 'Loading',
+            show: {
+                toolbar: false,
+                footer: false,
+                toolbarSave: false,
+                toolbarDelete: false,
+                toolbarSearch: false,
+                toolbarReload: false,
+                toolbarColumns: false
+            },
+            columns: [
+                {
+                    field: 'Timestamp',
+                    caption: 'Timestamp',
+                    size: '25%',
+                    sortable: true,
+                    resizable: true,
+                    type: 'date'
+                },
+                {
+                    field: 'Winner.FirstName',
+                    caption: 'Winner',
+                    size: '25%',
+                    sortable: true,
+                    resizable: true,
+                    type: 'text'
+                },
+                {
+                    field: 'Loser.FirstName',
+                    caption: 'Loser',
+                    size: '25%',
+                    sortable: true,
+                    resizable: true,
+                    type: 'text'
+                },
+                {
+                    caption: 'Score',
+                    size: '25%',
+                    sortable: true,
+                    resizable: true,
+                    type: 'text',
+                    render: function(record) {
+                        return record.WinnerScore + ' - ' + record.LoserScore;
+                    }
+                }
+            ]
+        });
+    });
+</script>

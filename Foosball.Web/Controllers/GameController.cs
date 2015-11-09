@@ -8,26 +8,33 @@ namespace Foosball.Web.Controllers
     {
         public ActionResult Index()
         {
-            var games = Commands.GetGames().OrderByDescending(g => g.Timestamp);
-            return View(games);
+            return View();
+        }
+
+        public ActionResult Log()
+        {
+            return View();
         }
 
         public ActionResult Create()
         {
-            var players =
-                Commands.GetPlayers()
-                    .Select(
-                        p =>
-                            new SelectListItem
-                            {
-                                Text = string.Format("{0} {1}", p.FirstName, p.LastName),
-                                Value = p.Id.ToString()
-                            });
+            var players = Commands.GetPlayers().ToList();
+            var selectItems =
+                players.Select(
+                    p =>
+                        new SelectListItem
+                        {
+                            Text = string.Format("{0} {1}", p.FirstName, p.LastName),
+                            Value = p.Id.ToString()
+                        });
+
             var model = new GameViewModel
             {
-                Player1Score = 0,
-                Player2Score = 0,
-                Players = new SelectList(players, "Value", "Text")
+                Winner = players.Single(p => p.FirstName == "Chad"),
+                Loser = players.Single(p => p.FirstName == "Nancy"),
+                WinnerScore = 10,
+                LoserScore = 0,
+                Players = new SelectList(selectItems, "Value", "Text")
             };
             return View(model);
         }
@@ -35,8 +42,8 @@ namespace Foosball.Web.Controllers
         [HttpPost]
         public ActionResult Create(GameViewModel game)
         {
-            game.Player1 = new PlayerViewModel { Id = game.Player1Id };
-            game.Player2 = new PlayerViewModel { Id = game.Player2Id };
+            game.Winner = new PlayerViewModel { Id = game.WinnerId };
+            game.Loser = new PlayerViewModel { Id = game.LoserId };
             game.Id = Commands.SaveGame(game).Id;
             return RedirectToAction("Index");
         }

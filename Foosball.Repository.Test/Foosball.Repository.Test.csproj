@@ -62,6 +62,7 @@
   <ItemGroup>
     <Compile Include="Command\CommandTest.cs" />
     <Compile Include="Command\GetGamesTest.cs" />
+    <Compile Include="Command\GetPlayerRecordsTest.cs" />
     <Compile Include="Command\GetPlayersTest.cs" />
     <Compile Include="Command\SaveGameTest.cs" />
     <Compile Include="Model\Game.cs" />

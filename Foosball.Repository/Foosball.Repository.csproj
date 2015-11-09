@@ -58,9 +58,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Command\GetGames.cs" />
+    <Compile Include="Command\GetPlayerRecords.cs" />
     <Compile Include="Command\GetPlayers.cs" />
     <Compile Include="Command\RepositoryRead.cs" />
     <Compile Include="Command\SaveGame.cs" />
+    <Compile Include="Command\SaveGameResult.cs" />
     <Compile Include="Factory\PlayerFactory.cs" />
     <Compile Include="FoosballContext.cs" />
     <Compile Include="FoosballContextFactory.cs" />
@@ -70,6 +72,7 @@
     <Compile Include="Factory\GameFactory.cs" />
     <Compile Include="Model\Game.cs" />
     <Compile Include="Model\Player.cs" />
+    <Compile Include="Model\PlayerRecord.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Command\RepositorySave.cs" />
   </ItemGroup>

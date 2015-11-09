@@ -49,6 +49,8 @@
     <Compile Include="Command\ICommandWithResult.cs" />
     <Compile Include="Model\IGame.cs" />
     <Compile Include="Model\IPlayer.cs" />
+    <Compile Include="Model\IPlayerRecord.cs" />
+    <Compile Include="ObjectExtensionMethods.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

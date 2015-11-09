@@ -6,7 +6,7 @@ using Foosball.Domain.Model;
 namespace Foosball.Repository.Model
 {
     [Table("Games")]
-    internal class Game : IGame
+    public class Game : IGame
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -16,26 +16,26 @@ namespace Foosball.Repository.Model
         [Column("Timestamp")]
         public DateTime Timestamp { get; set; }
 
-        [Column("Player1Id")]
-        public Guid Player1Id { get; set; }
+        [Column("WinnerId")]
+        public Guid WinnerId { get; set; }
 
-        public IPlayer Player1 { get { return DbPlayer1; } }
+        public IPlayer Winner { get { return DbWinner; } }
 
-        [ForeignKey("Player1Id")]
-        public Player DbPlayer1 { get; set; }
+        [ForeignKey("WinnerId")]
+        public Player DbWinner { get; set; }
 
-        [Column("Player2Id")]
-        public Guid Player2Id { get; set; }
+        [Column("WinnerScore")]
+        public int WinnerScore { get; set; }
 
-        public IPlayer Player2 { get { return DbPlayer2; } }
+        [Column("LoserId")]
+        public Guid LoserId { get; set; }
 
-        [ForeignKey("Player2Id")]
-        public Player DbPlayer2 { get; set; }
+        public IPlayer Loser { get { return DbLoser; } }
 
-        [Column("Player1Score")]
-        public int Player1Score { get; set; }
+        [ForeignKey("LoserId")]
+        public Player DbLoser { get; set; }
 
-        [Column("Player2Score")]
-        public int Player2Score { get; set; }
+        [Column("LoserScore")]
+        public int LoserScore { get; set; }
     }
 }

@@ -11,10 +11,10 @@ namespace Foosball.Repository.Factory
             return new Game
             {
                 Id = game.Id,
-                Player1Id = game.Player1.Id,
-                Player1Score = game.Player1Score,
-                Player2Id = game.Player2.Id,
-                Player2Score = game.Player2Score,
+                WinnerId = game.Winner.Id,
+                WinnerScore = game.WinnerScore,
+                LoserId = game.Loser.Id,
+                LoserScore = game.LoserScore,
                 Timestamp = game.Timestamp == new DateTime() ? DateTime.Now : game.Timestamp
             };
         }

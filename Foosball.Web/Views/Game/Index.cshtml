@@ -1,33 +1,94 @@
-﻿@model IEnumerable<Foosball.Domain.Model.IGame>
+﻿@model IEnumerable<Foosball.Domain.Model.IPlayerRecord>
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Results</h2>
+<h2>Standings</h2>
+<div id="resultsGrid" style="height: 450px"></div>
 
-@*<div class="table table-striped">
-    
-</div>*@
-<table class="table table-striped">   
-    <thead>
-        <tr>
-            <th>Timestamp</th>
-            <th>Player 1</th>
-            <th>Score</th>
-            <th>Player 2</th>
-            <th>Score</th>
-        </tr>
-    </thead>
-    <tbody>
-    @foreach (var game in Model)
-    {
-        <tr>
-            <td>@game.Timestamp</td>
-            <td>@game.Player1.FirstName</td>
-            <td>@game.Player1Score</td>
-            <td>@game.Player2.FirstName</td>
-            <td>@game.Player2Score</td>
-        </tr>
-    }
-    </tbody>
-</table>
+<script>
+    $(function() {
+        $('#resultsGrid').w2grid({
+            name: 'resultsGrid',
+            url: '@Url.RouteUrl("DefaultApi", new { httproute = "", controller = "PlayerRecordGrid" })',
+            autoLoad: true,
+            limit: 500,
+            msgRefresh: 'Loading',
+            show: {
+                toolbar: false,
+                footer: false,
+                toolbarSave: false,
+                toolbarDelete: false,
+                toolbarSearch: false,
+                toolbarReload: false,
+                toolbarColumns: false
+            },
+            columns: [
+                {
+                    field: 'Player.FirstName',
+                    caption: 'Name',
+                    size: '20%',
+                    sortable: true,
+                    resizable: true,
+                    render: 'text'
+                },
+                {
+                    field: 'GamesPlayed',
+                    caption: 'Games Played',
+                    size: '10%',
+                    sortable: true,
+                    resizable: true,
+                    render: 'text'
+                },
+                {
+                    field: 'Wins',
+                    caption: 'Wins',
+                    size: '10%',
+                    sortable: true,
+                    resizable: true,
+                    render: 'text'
+                },
+                {
+                    field: 'Losses',
+                    caption: 'Losses',
+                    size: '10%',
+                    sortable: true,
+                    resizable: true,
+                    render: 'text'
+                },
+                {
+                    field: 'GoalsScored',
+                    caption: 'Goals Scored',
+                    size: '15%',
+                    sortable: true,
+                    resizable: true,
+                    render: 'int'
+                },
+                {
+                    field: 'GoalsAllowed',
+                    caption: 'Goals Allowed',
+                    size: '15%',
+                    sortable: true,
+                    resizable: true,
+                    render: 'int'
+                },
+                {
+                    field: 'GoalsScoredPerGame',
+                    caption: 'GSA',
+                    size: '10%',
+                    sortable: true,
+                    resizable: true,
+                    render: 'number:2'
+                },
+                {
+                    field: 'GoalsAllowedPerGame',
+                    caption: 'GAA',
+                    size: '10%',
+                    sortable: true,
+                    resizable: true,
+                    render: 'number:2'
+                }
+            ]
+        });
+    });
+</script>

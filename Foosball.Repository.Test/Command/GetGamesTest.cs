@@ -11,8 +11,8 @@ namespace Foosball.Repository.Test.Command
         {
             var games = Commands.GetGames().ToList();
             Assert.IsNotNull(games);
-            Assert.IsTrue(games.First().Player1 != null);
-            Assert.IsTrue(games.First().Player2 != null);
+            Assert.IsTrue(games.First().Winner != null);
+            Assert.IsTrue(games.First().Loser != null);
         }
     }
 }

@@ -8,10 +8,10 @@ namespace Foosball.Repository.Test.Model
         public Guid Id { get; set; }
         public DateTime Timestamp { get; set; }
         public Guid Player1Id { get; set; }
-        public IPlayer Player1 { get; set; }
+        public IPlayer Winner { get; set; }
         public Guid Player2Id { get; set; }
-        public IPlayer Player2 { get; set; }
-        public int Player1Score { get; set; }
-        public int Player2Score { get; set; }
+        public IPlayer Loser { get; set; }
+        public int WinnerScore { get; set; }
+        public int LoserScore { get; set; }
     }
 }

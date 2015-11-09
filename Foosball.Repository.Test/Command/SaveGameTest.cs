@@ -13,10 +13,10 @@ namespace Foosball.Repository.Test.Command
         {
             IGame game = new Game
             {
-                Player1 = new Player { Id = new Guid("7CA7900C-AB85-E511-ACA1-C8A8A3194C25") },
-                Player2 = new Player { Id = new Guid("7DA7900C-AB85-E511-ACA1-C8A8A3194C25") },
-                Player1Score = 10,
-                Player2Score = 5
+                Winner = new Player { Id = new Guid("7CA7900C-AB85-E511-ACA1-C8A8A3194C25") },
+                Loser = new Player { Id = new Guid("7DA7900C-AB85-E511-ACA1-C8A8A3194C25") },
+                WinnerScore = 10,
+                LoserScore = 5
             };
             game = Commands.SaveGame(game);
             Assert.AreNotEqual(Guid.Empty, game.Id);

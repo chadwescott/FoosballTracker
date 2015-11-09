@@ -11,7 +11,7 @@ namespace Foosball.Repository.Command
         {
             InvokeRepositoryRead(r =>
             {
-                Result = r.GetAll().Include(g => g.DbPlayer1).Include(g => g.DbPlayer2).ToList();
+                Result = r.GetAll().Include(g => g.DbWinner).Include(g => g.DbLoser).ToList();
             });
         }
     }

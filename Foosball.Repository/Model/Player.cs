@@ -7,7 +7,7 @@ using Foosball.Domain.Model;
 namespace Foosball.Repository.Model
 {
     [Table("Players")]
-    internal class Player : IPlayer
+    public class Player : IPlayer
     {
         [Column("Id")]
         public Guid Id { get; set; }
@@ -20,6 +20,7 @@ namespace Foosball.Repository.Model
         [Required]
         public string LastName { get; set; }
 
+        [NotMapped]
         public IEnumerable<IGame> Games { get; set; }
     }
 }

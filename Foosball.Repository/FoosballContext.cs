@@ -20,5 +20,6 @@ namespace Foosball.Repository
 
         public DbSet<Player> Players { get; set; }
         public DbSet<Game> Games { get; set; }
+        public DbSet<PlayerRecord> PlayerRecords { get; set; }
     }
 }

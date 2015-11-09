@@ -13,6 +13,11 @@ namespace Foosball.Business
             return _repositoryCommands.GetGames();
         }
 
+        public IEnumerable<IPlayerRecord> GetPlayerRecords()
+        {
+            return _repositoryCommands.GetPlayerRecords();
+        }
+
         public IEnumerable<IPlayer> GetPlayers()
         {
             return _repositoryCommands.GetPlayers();
