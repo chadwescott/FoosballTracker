@@ -2,9 +2,9 @@
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<h2>Create A Game</h2>
+<h2>Add A Game</h2>
 
-@using (Html.BeginForm("Create", "Game", FormMethod.Post, new { @class = "form-horizontal" }))
+@using (Html.BeginForm("Add", "Game", FormMethod.Post, new { @class = "form-horizontal" }))
 {
     @Html.AntiForgeryToken()
     <div class="form-group">

@@ -10,8 +10,10 @@ namespace Foosball.Repository.Factory
             return new Player
             {
                 Id = player.Id,
+                UserName = player.UserName,
                 FirstName = player.FirstName,
-                LastName = player.LastName
+                LastName = player.LastName,
+                Rating = player.Rating
             };
         }
     }

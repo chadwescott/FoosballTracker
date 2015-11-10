@@ -2,10 +2,11 @@
 
 namespace Foosball.Domain.Model
 {
-    public interface IPlayer
+    public interface IPlayer : IHasId
     {
-        Guid Id { get; }
+        string UserName { get; }
         string FirstName { get; }
         string LastName { get; }
+        double Rating { get; set; }
     }
 }

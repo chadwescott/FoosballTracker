@@ -6,17 +6,12 @@ namespace Foosball.Web.Controllers
 {
     public class GameController : BaseController
     {
-        public ActionResult Index()
-        {
-            return View();
-        }
-
         public ActionResult Log()
         {
             return View();
         }
 
-        public ActionResult Create()
+        public ActionResult Add()
         {
             var players = Commands.GetPlayers().ToList();
             var selectItems =
@@ -40,12 +35,12 @@ namespace Foosball.Web.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create(GameViewModel game)
+        public ActionResult Add(GameViewModel game)
         {
             game.Winner = new PlayerViewModel { Id = game.WinnerId };
             game.Loser = new PlayerViewModel { Id = game.LoserId };
             game.Id = Commands.SaveGame(game).Id;
-            return RedirectToAction("Index");
+            return RedirectToAction("Standings", "Player");
         }
     }
 }

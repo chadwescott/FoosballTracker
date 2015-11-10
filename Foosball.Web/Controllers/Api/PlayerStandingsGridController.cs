@@ -9,7 +9,7 @@ using Foosball.Web.Models;
 
 namespace Foosball.Web.Controllers.Api
 {
-    public class PlayerRecordGridController : ApiController
+    public class PlayerStandingsGridController : ApiController
     {
         public BaseResponse Post([FromBody]PostData<PlayerRecordViewModel> data)
         {

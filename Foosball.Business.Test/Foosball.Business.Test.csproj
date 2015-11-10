@@ -3,11 +3,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{7A148BF2-CFD0-4571-B893-B924E69E5196}</ProjectGuid>
+    <ProjectGuid>{DBB40805-9863-4986-8CAA-94D506519137}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Foosball.Repository.Test</RootNamespace>
-    <AssemblyName>Foosball.Repository.Test</AssemblyName>
+    <RootNamespace>Foosball.Business.Test</RootNamespace>
+    <AssemblyName>Foosball.Business.Test</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -35,15 +35,6 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Localhost|AnyCPU'">
-    <OutputPath>bin\Localhost\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <Optimize>true</Optimize>
-    <DebugType>pdbonly</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-  </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
@@ -51,6 +42,10 @@
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.13.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -69,30 +64,25 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="Command\CommandTest.cs" />
-    <Compile Include="Command\GetGamesTest.cs" />
-    <Compile Include="Command\GetPlayerRecordsTest.cs" />
-    <Compile Include="Command\GetPlayersTest.cs" />
-    <Compile Include="Command\SaveGameTest.cs" />
-    <Compile Include="Model\Game.cs" />
-    <Compile Include="Model\Player.cs" />
+    <Compile Include="UpdatePlayerRatingsTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Foosball.Business\Foosball.Business.csproj">
+      <Project>{f0a82f7d-5b49-4503-8e49-498c185d0068}</Project>
+      <Name>Foosball.Business</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Foosball.Domain\Foosball.Domain.csproj">
       <Project>{d180f55c-cccd-49e3-b25b-79d102e4241b}</Project>
       <Name>Foosball.Domain</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Foosball.Repository\Foosball.Repository.csproj">
-      <Project>{16477ca5-874d-4488-ab1a-206e353bd52a}</Project>
-      <Name>Foosball.Repository</Name>
-    </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup />
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

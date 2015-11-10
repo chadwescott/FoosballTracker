@@ -37,5 +37,19 @@ namespace Foosball.Repository
             _executer.Execute(command);
             return command.Result;
         }
+
+        public IPlayer SavePlayer(IPlayer player)
+        {
+            var command = new SavePlayer(PlayerFactory.MakePlayer(player));
+            _executer.Execute(command);
+            return command.Result;
+        }
+
+        public IRatingHistory SaveRatingHistory(IRatingHistory ratingHistory)
+        {
+            var command = new SaveRatingHistory(RatingHistoryFactory.MakeGame(ratingHistory));
+            command.Execute();
+            return command.Result;
+        }
     }
 }

@@ -1,10 +1,11 @@
 ﻿using System;
 using CooperVision.DataAccess.Repository;
 using Foosball.Domain.Command;
+using Foosball.Domain.Model;
 
 namespace Foosball.Repository.Command
 {
-    internal abstract class RepositorySave<T> : RepositoryCommand, ICommandWithResult<T> where T : class
+    internal abstract class RepositorySave<T> : RepositoryCommand, ICommandWithResult<T> where T : class, IHasId
     {
         protected readonly IRepositoryFactory<T> RepositoryFactory = new WritableRepositoryFactory<T>();
         public T Result { get; protected set; }
@@ -18,7 +19,7 @@ namespace Foosball.Repository.Command
         {
             InvokeRepositoryAndSave(repository =>
             {
-                if (IsNew(Result))
+                if (Result.Id == Guid.Empty)
                     repository.Insert(Result);
                 else
                     repository.Update(Result);
@@ -34,7 +35,5 @@ namespace Foosball.Repository.Command
                 context.SaveChanges();
             }
         }
-
-        protected abstract bool IsNew(T model);
     }
 }

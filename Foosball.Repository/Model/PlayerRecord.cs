@@ -24,7 +24,9 @@ namespace Foosball.Repository.Model
                 {
                     Id = Id,
                     FirstName = FirstName,
-                    LastName = LastName
+                    LastName = LastName,
+                    UserName = UserName,
+                    Rating = Rating
                 });
             }
         }

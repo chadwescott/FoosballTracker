@@ -10,7 +10,7 @@
     $(function() {
         $('#resultsGrid').w2grid({
             name: 'resultsGrid',
-            url: '@Url.RouteUrl("DefaultApi", new { httproute = "", controller = "PlayerRecordGrid" })',
+            url: '@Url.RouteUrl("DefaultApi", new { httproute = "", controller = "PlayerStandingsGrid" })',
             autoLoad: true,
             limit: 500,
             msgRefresh: 'Loading',
@@ -25,7 +25,7 @@
             },
             columns: [
                 {
-                    field: 'Player.FirstName',
+                    field: 'Player.UserName',
                     caption: 'Name',
                     size: '20%',
                     sortable: true,
@@ -57,9 +57,17 @@
                     render: 'text'
                 },
                 {
+                    field: 'Player.Rating',
+                    caption: 'Rating',
+                    size: '10%',
+                    sortable: true,
+                    resizable: true,
+                    render: 'number'
+                },
+                {
                     field: 'GoalsScored',
                     caption: 'Goals Scored',
-                    size: '15%',
+                    size: '10%',
                     sortable: true,
                     resizable: true,
                     render: 'int'
@@ -67,14 +75,15 @@
                 {
                     field: 'GoalsAllowed',
                     caption: 'Goals Allowed',
-                    size: '15%',
+                    size: '10%',
                     sortable: true,
                     resizable: true,
                     render: 'int'
                 },
                 {
                     field: 'GoalsScoredPerGame',
-                    caption: 'GSA',
+                    caption: 'GSG',
+                    title: 'Goals Scored Per Game',
                     size: '10%',
                     sortable: true,
                     resizable: true,
@@ -82,7 +91,8 @@
                 },
                 {
                     field: 'GoalsAllowedPerGame',
-                    caption: 'GAA',
+                    caption: 'GAG',
+                    title: 'Goals Allowed Per Game',
                     size: '10%',
                     sortable: true,
                     resizable: true,
