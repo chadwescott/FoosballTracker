@@ -67,6 +67,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Command\GetGames.cs" />
+    <Compile Include="Command\GetPlayerById.cs" />
     <Compile Include="Command\GetPlayerRecords.cs" />
     <Compile Include="Command\GetPlayers.cs" />
     <Compile Include="Command\RepositoryRead.cs" />

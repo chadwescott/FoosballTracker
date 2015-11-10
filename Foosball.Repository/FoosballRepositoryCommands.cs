@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Foosball.Domain.Command;
 using Foosball.Domain.Model;
 using Foosball.Repository.Command;
@@ -13,6 +14,13 @@ namespace Foosball.Repository
         public IEnumerable<IGame> GetGames()
         {
             var command = new GetGames();
+            _executer.Execute(command);
+            return command.Result;
+        }
+
+        public IPlayer GetPlayerById(Guid id)
+        {
+            var command = new GetPlayerById(id);
             _executer.Execute(command);
             return command.Result;
         }
@@ -33,8 +41,13 @@ namespace Foosball.Repository
 
         public IGame SaveGame(IGame game)
         {
-            var command = new SaveGame(GameFactory.MakeGame(game));
+            var winner = GetPlayerById(game.Winner.Id);
+            var loser = GetPlayerById(game.Loser.Id);
+            var dbGame = GameFactory.MakeGame(game);
+            var command = new SaveGame(dbGame);
             _executer.Execute(command);
+            dbGame.Winner = winner;
+            dbGame.Loser = loser;
             return command.Result;
         }
 

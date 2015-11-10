@@ -28,6 +28,7 @@ namespace Foosball.Business
         public IGame SaveGame(IGame game)
         {
             game = _repositoryCommands.SaveGame(game);
+            UpdatePlayerRating(game);
             return game;
         }
 

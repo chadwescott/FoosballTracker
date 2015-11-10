@@ -2,6 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Foosball.Domain.Model;
+using Foosball.Repository.Factory;
 
 namespace Foosball.Repository.Model
 {
@@ -19,7 +20,11 @@ namespace Foosball.Repository.Model
         [Column("WinnerId")]
         public Guid WinnerId { get; set; }
 
-        public IPlayer Winner { get { return DbWinner; } }
+        public IPlayer Winner
+        {
+            get { return DbWinner; }
+            set { DbWinner = PlayerFactory.MakePlayer(value); }
+        }
 
         [ForeignKey("WinnerId")]
         public Player DbWinner { get; set; }
@@ -30,7 +35,11 @@ namespace Foosball.Repository.Model
         [Column("LoserId")]
         public Guid LoserId { get; set; }
 
-        public IPlayer Loser { get { return DbLoser; } }
+        public IPlayer Loser
+        {
+            get { return DbLoser; }
+            set { DbLoser = PlayerFactory.MakePlayer(value); }
+        }
 
         [ForeignKey("LoserId")]
         public Player DbLoser { get; set; }
