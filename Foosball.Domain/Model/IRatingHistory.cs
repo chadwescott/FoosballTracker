@@ -2,7 +2,7 @@
 
 namespace Foosball.Domain.Model
 {
-    public interface IRatingHistory : IHasId
+    public interface IRatingHistory : IHasId<Guid>
     {
         IPlayer Player { get; }
         IGame Game { get; }

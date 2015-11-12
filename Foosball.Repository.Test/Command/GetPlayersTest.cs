@@ -7,7 +7,7 @@ namespace Foosball.Repository.Test.Command
     public class GetPlayersTest : CommandTest
     {
         [TestMethod]
-        public void ValidTest()
+        public void GetPlayersValidTest()
         {
             var actual = Commands.GetPlayers();
             Assert.AreEqual(2, actual.Count());

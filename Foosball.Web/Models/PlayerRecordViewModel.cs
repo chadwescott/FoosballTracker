@@ -2,9 +2,8 @@
 
 namespace Foosball.Web.Models
 {
-    public class PlayerRecordViewModel : IPlayerRecord
+    public class PlayerRecordViewModel : Player, IPlayerRecord
     {
-        public IPlayer Player { get; set; }
         public int Wins { get; set; }
         public int Losses { get; set; }
         public int GoalsScored { get; set; }

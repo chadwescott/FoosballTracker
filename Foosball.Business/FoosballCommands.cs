@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Foosball.Domain.Command;
 using Foosball.Domain.Model;
 using Foosball.Repository;
@@ -15,6 +16,11 @@ namespace Foosball.Business
             return _repositoryCommands.GetGames();
         }
 
+        public IPlayer GetPlayerById(Guid id)
+        {
+            return _repositoryCommands.GetPlayerById(id);
+        }
+
         public IEnumerable<IPlayerRecord> GetPlayerRecords()
         {
             return _repositoryCommands.GetPlayerRecords();
@@ -27,6 +33,8 @@ namespace Foosball.Business
 
         public IGame SaveGame(IGame game)
         {
+            if (game.Winner.Id == game.Loser.Id)
+                throw new Exception("The winner and loser can't be the same player!");
             game = _repositoryCommands.SaveGame(game);
             UpdatePlayerRating(game);
             return game;

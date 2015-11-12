@@ -1,14 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Foosball.Domain.Model;
 
-namespace Foosball.Repository.Model
+namespace Foosball.Repository.Tables
 {
     [Table("Players")]
-    public class Player : IPlayer
+    internal class DbPlayer : IPlayer
     {
+        [Key]
         [Column("Id")]
         public Guid Id { get; set; }
 
@@ -27,8 +27,5 @@ namespace Foosball.Repository.Model
         [Column("Rating")]
         [Required]
         public double Rating { get; set; }
-
-        [NotMapped]
-        public IEnumerable<IGame> Games { get; set; }
     }
 }

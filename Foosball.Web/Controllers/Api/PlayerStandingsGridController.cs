@@ -4,7 +4,7 @@ using System.Web.Http;
 using CooperVision.QueryEngine.Grid;
 using CooperVision.QueryEngine.Grid.Response;
 using Foosball.Business;
-using Foosball.Domain.Model;
+using Foosball.Web.Factory;
 using Foosball.Web.Models;
 
 namespace Foosball.Web.Controllers.Api
@@ -33,7 +33,7 @@ namespace Foosball.Web.Controllers.Api
                 {
                     status = ResponseCodes.Success,
                     total = result.Count(),
-                    records = result.Select(CreateViewModel).ToList()
+                    records = result.Select(PlayerRecordViewModelFactory.Make).ToList()
                 };
             }
             catch (Exception ex)
@@ -44,18 +44,6 @@ namespace Foosball.Web.Controllers.Api
                     message = ex.Message
                 };
             }
-        }
-
-        private static PlayerRecordViewModel CreateViewModel(IPlayerRecord model)
-        {
-            return new PlayerRecordViewModel
-            {
-                Player = model.Player,
-                Wins = model.Wins,
-                Losses = model.Losses,
-                GoalsAllowed = model.GoalsAllowed,
-                GoalsScored = model.GoalsScored
-            };
         }
     }
 }

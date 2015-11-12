@@ -5,7 +5,7 @@ using Foosball.Domain.Model;
 
 namespace Foosball.Repository.Command
 {
-    internal abstract class RepositorySave<T> : RepositoryCommand, ICommandWithResult<T> where T : class, IHasId
+    internal abstract class RepositorySave<T> : RepositoryCommand, ICommandWithResult<T> where T : class, IHasId<Guid>
     {
         protected readonly IRepositoryFactory<T> RepositoryFactory = new WritableRepositoryFactory<T>();
         public T Result { get; protected set; }

@@ -24,35 +24,67 @@
             },
             columns: [
                 {
-                    field: 'Timestamp',
+                    field: 'GridTimestamp',
                     caption: 'Timestamp',
-                    size: '25%',
+                    size: '20%',
                     sortable: true,
                     resizable: true,
-                    type: 'date'
+                    render: 'text'
                 },
                 {
-                    field: 'Winner.FirstName',
+                    field: 'Winner.UserName',
                     caption: 'Winner',
-                    size: '25%',
+                    size: '15%',
                     sortable: true,
                     resizable: true,
-                    type: 'text'
+                    render: 'text'
                 },
                 {
-                    field: 'Loser.FirstName',
-                    caption: 'Loser',
-                    size: '25%',
+                    field: 'WinnerRating',
+                    caption: 'Winner Rating',
+                    size: '10%',
                     sortable: true,
                     resizable: true,
-                    type: 'text'
+                    render: 'number'
+                },
+                {
+                    field: 'WinnerDelta',
+                    caption: 'Winner Delta',
+                    size: '10%',
+                    sortable: true,
+                    resizable: true,
+                    render: 'number'
+                },
+                {
+                    field: 'Loser.UserName',
+                    caption: 'Loser',
+                    size: '15%',
+                    sortable: true,
+                    resizable: true,
+                    render: 'text'
+                },
+                {
+                    field: 'LoserRating',
+                    caption: 'Loser Rating',
+                    size: '10%',
+                    sortable: true,
+                    resizable: true,
+                    render: 'number'
+                },
+                {
+                    field: 'LoserDelta',
+                    caption: 'Loser Delta',
+                    size: '10%',
+                    sortable: true,
+                    resizable: true,
+                    render: 'number'
                 },
                 {
                     caption: 'Score',
-                    size: '25%',
+                    size: '10%',
                     sortable: true,
                     resizable: true,
-                    type: 'text',
+                    render: 'text',
                     render: function(record) {
                         return record.WinnerScore + ' - ' + record.LoserScore;
                     }

@@ -1,13 +1,13 @@
 ﻿using Foosball.Domain.Model;
-using Foosball.Repository.Model;
+using Foosball.Repository.Tables;
 
 namespace Foosball.Repository.Factory
 {
-    internal static class PlayerFactory
+    internal static class DbPlayerFactory
     {
-        public static Player MakePlayer(IPlayer player)
+        public static DbPlayer Make(IPlayer player)
         {
-            return new Player
+            return new DbPlayer
             {
                 Id = player.Id,
                 UserName = player.UserName,

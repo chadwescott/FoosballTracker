@@ -1,11 +1,10 @@
-﻿namespace Foosball.Domain.Model
+namespace Foosball.Domain.Model
 {
-    public interface IPlayerRecord
+    public interface IPlayerRecord : IPlayer
     {
-        IPlayer Player { get; }
-        int Wins { get; }
-        int Losses { get; }
-        int GoalsScored { get; }
-        int GoalsAllowed { get; }
+        int Wins { get; set; }
+        int Losses { get; set; }
+        int GoalsScored { get; set; }
+        int GoalsAllowed { get; set; }
     }
 }

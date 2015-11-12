@@ -1,10 +1,10 @@
-﻿using Foosball.Repository.Model;
+﻿using Foosball.Repository.Tables;
 
 namespace Foosball.Repository.Command
 {
-    internal class SaveGame : RepositorySave<Game>
+    internal class SaveGame : RepositorySave<DbGame>
     {
-        public SaveGame(Game result) : base(result)
+        public SaveGame(DbGame result) : base(result)
         { }
     }
 }

@@ -73,19 +73,17 @@
     <Compile Include="Command\RepositoryRead.cs" />
     <Compile Include="Command\SaveGame.cs" />
     <Compile Include="Command\SavePlayer.cs" />
-    <Compile Include="Command\SaveRatingHistory.cs" />
-    <Compile Include="Factory\PlayerFactory.cs" />
-    <Compile Include="Factory\RatingHistoryFactory.cs" />
+    <Compile Include="Factory\DbPlayerFactory.cs" />
     <Compile Include="FoosballContext.cs" />
     <Compile Include="FoosballContextFactory.cs" />
     <Compile Include="FoosballRepositoryCommands.cs" />
     <Compile Include="IFoosballContext.cs" />
     <Compile Include="Command\RepositoryCommand.cs" />
-    <Compile Include="Factory\GameFactory.cs" />
-    <Compile Include="Model\Game.cs" />
-    <Compile Include="Model\Player.cs" />
-    <Compile Include="Model\PlayerRecord.cs" />
-    <Compile Include="Model\RatingHistory.cs" />
+    <Compile Include="Factory\DbGameFactory.cs" />
+    <Compile Include="Tables\DbGame.cs" />
+    <Compile Include="Views\DbGameSummary.cs" />
+    <Compile Include="Tables\DbPlayer.cs" />
+    <Compile Include="Views\DbPlayerRecord.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Command\RepositorySave.cs" />
   </ItemGroup>

@@ -1,9 +1,8 @@
 ﻿using System;
-using Foosball.Domain.Model;
 
-namespace Foosball.Repository.Test.Model
+namespace Foosball.Domain.Model
 {
-    internal class Player : IPlayer
+    public class Player : IPlayer
     {
         public Guid Id { get; set; }
         public string UserName { get; set; }

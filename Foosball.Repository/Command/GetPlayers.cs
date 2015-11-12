@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Foosball.Repository.Model;
+using Foosball.Repository.Tables;
 
 namespace Foosball.Repository.Command
 {
-    internal class GetPlayers : RepositoryRead<Player, IEnumerable<Player>>
+    internal class GetPlayers : RepositoryRead<DbPlayer, IEnumerable<DbPlayer>>
     {
         public override void Execute()
         {
