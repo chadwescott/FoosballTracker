@@ -27,7 +27,7 @@ namespace Foosball.Web.Controllers.Api
             try
             {
                 var commands = new FoosballCommands();
-                var result = commands.GetPlayerRecords().OrderByDescending(r => r.Wins).ToList();
+                var result = commands.GetPlayerRecords().OrderByDescending(r => r.Rating).ToList();
 
                 return new GetResponse<PlayerRecordViewModel>
                 {

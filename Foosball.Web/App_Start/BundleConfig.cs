@@ -28,7 +28,7 @@ namespace Foosball.Web
                       "~/Content/site.css"));
 
             // w2ui
-            bundles.Add(new StyleBundle("~/Content/w2ui-css").Include("~/Content/w2ui-{version}.css"));
+            bundles.Add(new StyleBundle("~/Content/w2ui-css").Include("~/Content/w2ui-{version}-custom.css"));
             bundles.Add(new ScriptBundle("~/bundles/w2ui").Include("~/Scripts/w2ui-{version}.js").Include("~/Scripts/w2uisettings.js"));
 
             // jquery ui css

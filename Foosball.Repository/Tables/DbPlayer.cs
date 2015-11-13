@@ -9,6 +9,7 @@ namespace Foosball.Repository.Tables
     internal class DbPlayer : IPlayer
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Column("Id")]
         public Guid Id { get; set; }
 

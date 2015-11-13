@@ -1,0 +1,105 @@
+﻿body {
+    background-color: #02d3d3;
+}
+
+.body-content {
+    background-image: -webkit-linear-gradient(#fdffe6, #fffa3b);
+    background-image: -moz-linear-gradient(#fdffe6, #fffa3b);
+    background-image: -ms-linear-gradient(#fdffe6, #fffa3b);
+    background-image: -o-linear-gradient(#fdffe6, #fffa3b);
+    background-image: linear-gradient(#fdffe6, #fffa3b);
+}
+
+.btn-default {
+    color: white;
+    background-color: rgb(0, 89, 96);
+    border-color: rgb(11, 96, 0);
+}
+
+.btn-default:hover {
+    color: white;
+    background-color: #00ffff;
+    border-color: rgb(11, 96, 0);
+}
+
+.btn-default:active:hover,
+.btn-default.active:hover,
+.open > .dropdown-toggle.btn-default:hover,
+.btn-default:active:focus,
+.btn-default.active:focus,
+.open > .dropdown-toggle.btn-default:focus,
+.btn-default:active.focus,
+.btn-default.active.focus,
+.open > .dropdown-toggle.btn-default.focus {
+    color: white;
+    background-color: #00ffff;
+    border-color: rgb(11, 96, 0);
+}
+
+.btn-default:focus {
+    color: white;
+    background-color: #00ffff;
+    border-color: rgb(0, 89, 96);
+}
+
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+    color: white;
+    background-color: transparent;
+    background-image: -webkit-linear-gradient(#00ffff, #02d3d3);
+    background-image: -moz-linear-gradient(#00ffff, #02d3d3);
+    background-image: -ms-linear-gradient(#00ffff, #02d3d3);
+    background-image: -o-linear-gradient(#00ffff, #02d3d3);
+    background-image: linear-gradient(#00ffff, #02d3d3);
+}
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    color: inherit;
+}
+
+.navbar-default {
+    background-color: transparent;
+    color: rgb(0, 89, 96);
+    background-image: -webkit-linear-gradient(#fdffe6, #fffa3b);
+    background-image: -moz-linear-gradient(#fdffe6, #fffa3b);
+    background-image: -ms-linear-gradient(#fdffe6, #fffa3b);
+    background-image: -o-linear-gradient(#fdffe6, #fffa3b);
+    background-image: linear-gradient(#fdffe6, #fffa3b);
+}
+
+.navbar-default .navbar-brand {
+    color: inherit;
+}
+
+    .navbar-default .navbar-brand:hover {
+        color: inherit;
+    }
+
+.navbar-default .navbar-nav > li > a {
+    color: inherit;
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+    color: #00ffff;
+}
+
+.dropdown-menu {
+    background-image: -webkit-linear-gradient(#fdffe6, #fffa3b);
+    background-image: -moz-linear-gradient(#fdffe6, #fffa3b);
+    background-image: -ms-linear-gradient(#fdffe6, #fffa3b);
+    background-image: -o-linear-gradient(#fdffe6, #fffa3b);
+    background-image: linear-gradient(#fdffe6, #fffa3b);
+}
+
+.dropdown-menu > li > a {
+    color: rgb(0, 89, 96);
+}
+
+.dropdown-menu > li > a:hover {
+    color: white;
+    background-color: transparent;
+    background-image: -webkit-linear-gradient(#00ffff, #02d3d3);
+    background-image: -moz-linear-gradient(#00ffff, #02d3d3);
+    background-image: -ms-linear-gradient(#00ffff, #02d3d3);
+    background-image: -o-linear-gradient(#00ffff, #02d3d3);
+    background-image: linear-gradient(#00ffff, #02d3d3);
+}

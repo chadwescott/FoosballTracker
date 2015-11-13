@@ -1,0 +1,105 @@
+﻿body {
+    background-color: #d302c8;
+}
+
+.body-content {
+    background-image: -webkit-linear-gradient(#fdffe6, #fdffe6);
+    background-image: -moz-linear-gradient(#fdffe6, #fdffe6);
+    background-image: -ms-linear-gradient(#fdffe6, #fdffe6);
+    background-image: -o-linear-gradient(#fdffe6, #fdffe6);
+    background-image: linear-gradient(#fdffe6, #fdffe6);
+}
+
+.btn-default {
+    color: white;
+    background-color: rgb(123, 0, 134);
+    border-color: rgb(123, 0, 134);
+}
+
+.btn-default:hover {
+    color: white;
+    background-color: #ff00ff;
+    border-color: rgb(123, 0, 134);
+}
+
+.btn-default:active:hover,
+.btn-default.active:hover,
+.open > .dropdown-toggle.btn-default:hover,
+.btn-default:active:focus,
+.btn-default.active:focus,
+.open > .dropdown-toggle.btn-default:focus,
+.btn-default:active.focus,
+.btn-default.active.focus,
+.open > .dropdown-toggle.btn-default.focus {
+    color: white;
+    background-color: #ff00ff;
+    border-color: rgb(123, 0, 134);
+}
+
+.btn-default:focus {
+    color: white;
+    background-color: #ff00ff;
+    border-color: rgb(123, 0, 134);
+}
+
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+    color: white;
+    background-color: transparent;
+    background-image: -webkit-linear-gradient(#ff00ff, #d302d1);
+    background-image: -moz-linear-gradient(#ff00ff, #d302d1);
+    background-image: -ms-linear-gradient(#ff00ff, #d302d1);
+    background-image: -o-linear-gradient(#ff00ff, #d302d1);
+    background-image: linear-gradient(#ff00ff, #d302d1);
+}
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    color: inherit;
+}
+
+.navbar-default {
+    background-color: transparent;
+    color: rgb(123, 0, 134);
+    background-image: -webkit-linear-gradient(#fdffe6, #ff00ff);
+    background-image: -moz-linear-gradient(#fdffe6, #ff00ff);
+    background-image: -ms-linear-gradient(#fdffe6, #ff00ff);
+    background-image: -o-linear-gradient(#fdffe6, #ff00ff);
+    background-image: linear-gradient(#fdffe6, #ff00ff);
+}
+
+.navbar-default .navbar-brand {
+    color: inherit;
+}
+
+    .navbar-default .navbar-brand:hover {
+        color: inherit;
+    }
+
+.navbar-default .navbar-nav > li > a {
+    color: inherit;
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+    color: #ff00ff;
+}
+
+.dropdown-menu {
+    background-image: -webkit-linear-gradient(#fdffe6, #ff00ff);
+    background-image: -moz-linear-gradient(#fdffe6, #ff00ff);
+    background-image: -ms-linear-gradient(#fdffe6, #ff00ff);
+    background-image: -o-linear-gradient(#fdffe6, #ff00ff);
+    background-image: linear-gradient(#fdffe6, #ff00ff);
+}
+
+.dropdown-menu > li > a {
+    color: rgb(123, 0, 134);
+}
+
+.dropdown-menu > li > a:hover {
+    color: white;
+    background-color: transparent;
+    background-image: -webkit-linear-gradient(#ff00ff, #d302d1);
+    background-image: -moz-linear-gradient(#ff00ff, #d302d1);
+    background-image: -ms-linear-gradient(#ff00ff, #d302d1);
+    background-image: -o-linear-gradient(#ff00ff, #d302d1);
+    background-image: linear-gradient(#ff00ff, #d302d1);
+}

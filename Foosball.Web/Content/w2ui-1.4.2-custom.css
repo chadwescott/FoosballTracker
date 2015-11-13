@@ -1,4 +1,4 @@
-/* w2ui 1.4.2 (c) http://w2ui.com, vitmalina@gmail.com */
+﻿/* w2ui 1.4.2 (c) http://w2ui.com, vitmalina@gmail.com */
 @font-face {
   font-family: "w2ui-font";
   src: url("data:application/x-font-woff;charset=utf-8;base64,d09GRgABAAAAAAWIAAoAAAAACAgAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABPUy8yAAAA9AAAAEMAAABWQLxMsmNtYXAAAAE4AAAAOgAAAUriGRC2Z2x5ZgAAAXQAAAH9AAACgLu4vTRoZWFkAAADdAAAADAAAAA2AOYXBGhoZWEAAAOkAAAAIAAAACQD8wHHaG10eAAAA8QAAAAWAAAAIA7dAABsb2NhAAAD3AAAABIAAAASAngBuG1heHAAAAPwAAAAHwAAACABFQA2bmFtZQAABBAAAAEtAAACIsTQ/zJwb3N0AAAFQAAAAEgAAABi4/7ZEHicY2BkvMM4gYGVgYPRhTGNgYHBHUp/ZZBkaGFgYGJgZWbACgLSXFMYHD4yfmRnPPD/AIMe4wEGR6AwI0gOANHZC/IAeJxjYGBgZoBgGQZGBhBwAfIYwXwWBg0gzQakGRmYGBg+sv//D1LwkRFE8zNA1QMBIxvDiAcAddwGvgAAeJxFkLFv01AQxu97LrHdRImjpnaS1gnEia3IoqAktkkiEhaEOiCsDkEo8dyBDkytKpYKVWwssKKKAYmBREKMLJSFoRJ/AGJhY0NZGFgSzrUinvR+d++7T+/ePQLRci4IJ3SFCLIjG8CH+ZPwHHdwkkSS2PMXP3DGmUxpoo123lrt5nj8fjyejsc4W0zwNtl8FfHCKV5QnaOhF3IJUrUbkGPYnSGcGH6risBvGQhdVY0iVXXVkhJN1JL6/6xOIqWk4tRlJiVFiSJFSUrsZ+tkoqpEgt/6Hb/wjtZog2gonBx24AyFJUuNwMvha+/CvLi3vq1f785GsxGuTqfWc5O1N/r2+lNrOl38ZHnWpdUMr/CaLKLGZiHl4hI1+zasGB2/Dy9GSzfRbul4qaWPtHSQ0Y7SWpxmgnSc/mblMKNpmcOVEhfj+5d/8BGfqMl9bKuWFYWKaLf8YIAq9IKc5TY7ojNgTTcC7iEjaN4yPdswbM+81t8UimRLojq66YbdWq0bus375t21bwgcw/H6nmNUyhIkR/DsTasXPgx7VtV8oDx6XIxHE8vl8rMAzqlEDZ7QseUBPP6tLOQKDH5HqooKfLvB2gABa1lgflzI60VxsLd3IJj1YRn5/Wx9Syy++LvArn/JzH4e5WE98TCLer5wnBNb9WcrB5PoH084dg8AAAB4nGNgZGBgAOKMsPib8fw2Xxm4mRhA4PzjbBcY/f////1MjIwHgFwOBrA0AFcuDPF4nGNgZGBgPPD/AIMeEwMDw/9/TEwMQBEUwAEAe34EvHicY2JgYGCCYsbJCJpxO4QNABdTAesAAAAAAAAAEgAsAGgAjgC+AP4BQAAAeJxjYGRgYOBg0GJgZgABJiDmAkIGhv9gPgMADYEBTAB4nG2PTW7CMBCFXyBQFaQKtVKl7qwuuqkIPwsWHAD2LNiH4ARQEkeOQeICPUHP0DP0BF32DD1KX8IoixZbHn/z5o1/AAzwBQ/V8HBbx2q0cMPswm3SQNgnPwl30MezcJf6ULiHV8yE+3hAyBM8vzrtHk64hTu8Cbepvwv75A/hDh7xKdyl/i3cwxo/wn28eLN9ZPJhbHK30skxDW2TN7DWttybXE2CcaMtda5t6PRWbc6qPCVT52IVW5OpBas6TY0qrDnoyAU754r5aBSLHkQmwx4RDHL+Oq53hxU0EhyR8sf2Sv2/smaHRclKlStMEGB8xbekL6+9ITONLb0bnBlLnHjnlKqjW3FZ9mSkhfRqviclKxR17UAloh5gV3cVmGPEGf/xB/Ursl9uDmByAAAAeJxtwUEOgCAMBMAu0sI3SdMEIwKh8n8PXp2hQB+mf5kIAQciGIKEzFpNr6Sj7bs76xruMq3r2eJs22XZtPKIW1laiV6rCBDA") format("woff");
@@ -65,8 +65,6 @@
   padding: 0px;
 }
 .w2ui-reset table {
-  font-family: Verdana, Arial, sans-serif;
-  font-size: 11px;
   max-width: none;
   background-color: transparent;
   border-collapse: separate;
@@ -1348,29 +1346,29 @@ button.btn-red.clicked {
   bottom: 0px;
 }
 .w2ui-grid .w2ui-grid-body .w2ui-grid-records table tr.w2ui-odd {
-  background-color: #477a00;
-    color: #ffffff;
+  color: inherit;
+  background-color: #ffffff;
 }
 .w2ui-grid .w2ui-grid-body .w2ui-grid-records table tr.w2ui-odd:hover {
   color: #ffffff;
-  background-color: green;
+  background-color: #337ab7;
   cursor: pointer;
 }
 .w2ui-grid .w2ui-grid-body .w2ui-grid-records table tr.w2ui-odd.w2ui-empty-record:hover {
-  background-color: #477a00;
+  background-color: #ffffff;
   cursor: default;
 }
 .w2ui-grid .w2ui-grid-body .w2ui-grid-records table tr.w2ui-even {
-  background-color: #80c000;
-    color: #ffffff;
+  color: inherit;
+  background-color: #f8f8f8;
 }
 .w2ui-grid .w2ui-grid-body .w2ui-grid-records table tr.w2ui-even:hover {
   color: #ffffff;
-  background-color: green;
+  background-color: #337ab7;
   cursor: pointer;
 }
 .w2ui-grid .w2ui-grid-body .w2ui-grid-records table tr.w2ui-even.w2ui-empty-record:hover {
-  background-color: #80c000;
+  background-color: #f8f8f8;
   cursor: default;
 }
 .w2ui-grid .w2ui-grid-body .w2ui-grid-records table tr.w2ui-selected,
@@ -1426,13 +1424,12 @@ button.btn-red.clicked {
   padding: 0 3px 0 3px;
   border-right: 1px solid #c5c5c5;
   border-bottom: 1px solid #c5c5c5;
-  color: green;
-  cursor: pointer;
-  background-image: -webkit-linear-gradient(#fdffe6, #fffa3b);
-  background-image: -moz-linear-gradient(#fdffe6, #fffa3b);
-  background-image: -ms-linear-gradient(#fdffe6, #fffa3b);
-  background-image: -o-linear-gradient(#fdffe6, #fffa3b);
-  background-image: linear-gradient(#fdffe6, #fffa3b);
+  color: #000000;
+  background-image: -webkit-linear-gradient(#f9f9f9, #e4e4e4);
+  background-image: -moz-linear-gradient(#f9f9f9, #e4e4e4);
+  background-image: -ms-linear-gradient(#f9f9f9, #e4e4e4);
+  background-image: -o-linear-gradient(#f9f9f9, #e4e4e4);
+  background-image: linear-gradient(#f9f9f9, #e4e4e4);
   filter: progid:dximagetransform.microsoft.gradient(startColorstr='#fff9f9f9', endColorstr='#ffe4e4e4', GradientType=0);
 }
 .w2ui-head :hover {
@@ -1495,11 +1492,11 @@ button.btn-red.clicked {
   overflow: hidden;
 }
 .w2ui-grid .w2ui-grid-body table td.w2ui-grid-data {
-  margin: 0;
-  padding: 0 5px 0 5px;
+  margin: 0px;
+  padding: 0 3px 0 3px;
 }
 .w2ui-grid .w2ui-grid-body table td.w2ui-grid-data > div {
-  padding: 3px 3px 3px 3px;
+  padding: 0px;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;

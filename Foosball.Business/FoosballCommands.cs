@@ -11,6 +11,12 @@ namespace Foosball.Business
         private readonly CommandExecuter _executer = new CommandExecuter();
         private readonly FoosballRepositoryCommands _repositoryCommands = new FoosballRepositoryCommands();
 
+        public IPlayer AddPlayer(IPlayer player)
+        {
+            player.Rating = 1000;
+            return _repositoryCommands.SavePlayer(player);
+        }
+
         public IEnumerable<IGame> GetGames()
         {
             return _repositoryCommands.GetGames();
