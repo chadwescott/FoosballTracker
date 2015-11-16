@@ -45,6 +45,9 @@ namespace Foosball.Web
                         "~/Content/themes/base/datepicker.css",
                         "~/Content/themes/base/progressbar.css",
                         "~/Content/themes/base/theme-custom.css"));
+
+            // charts
+            bundles.Add(new ScriptBundle("~/bundles/charts").Include("~/Scripts/Flot/excanvas.min.js", "~/Scripts/Flot/jquery.flot.js"));
         }
     }
 }

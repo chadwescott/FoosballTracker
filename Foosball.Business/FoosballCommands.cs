@@ -22,9 +22,19 @@ namespace Foosball.Business
             return _repositoryCommands.GetGames();
         }
 
+        public IEnumerable<IGame> GetGamesByPlayerId(Guid playerId)
+        {
+            return _repositoryCommands.GetGamesByPlayerId(playerId);
+        }
+
         public IPlayer GetPlayerById(Guid id)
         {
             return _repositoryCommands.GetPlayerById(id);
+        }
+
+        public IEnumerable<IPlayerGameLog> GetPlayerGameLogsByPlayerId(Guid playerId)
+        {
+            return _repositoryCommands.GetPlayerGameLogsByPlayerId(playerId);
         }
 
         public IEnumerable<IPlayerRecord> GetPlayerRecords()

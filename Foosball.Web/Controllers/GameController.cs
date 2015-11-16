@@ -13,21 +13,11 @@ namespace Foosball.Web.Controllers
 
         public ActionResult Add()
         {
-            var players = Commands.GetPlayers().ToList();
-            var selectItems =
-                players.Select(
-                    p =>
-                        new SelectListItem
-                        {
-                            Text = p.UserName,
-                            Value = p.Id.ToString()
-                        });
-
             var model = new GameViewModel
             {
                 WinnerScore = 10,
                 LoserScore = 0,
-                Players = new SelectList(selectItems, "Value", "Text")
+                Players = GetPlayersSelectList()
             };
             return View(model);
         }
@@ -38,7 +28,23 @@ namespace Foosball.Web.Controllers
             game.Winner = Commands.GetPlayerById(game.WinnerId);
             game.Loser = Commands.GetPlayerById(game.LoserId);
             game.Id = Commands.SaveGame(game).Id;
-            return RedirectToAction("Standings", "Player");
+            game.Players = GetPlayersSelectList();
+            game.ShowSummary = true;
+            return View(game);
+        }
+
+        private SelectList GetPlayersSelectList()
+        {
+            var players = Commands.GetPlayers().ToList();
+            var selectItems =
+                players.Select(
+                    p =>
+                        new SelectListItem
+                        {
+                            Text = p.DisplayName,
+                            Value = p.Id.ToString()
+                        });
+            return new SelectList(selectItems, "Value", "Text");
         }
     }
 }

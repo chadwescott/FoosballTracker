@@ -25,41 +25,49 @@
             },
             columns: [
                 {
-                    field: 'UserName',
+                    field: 'DisplayName',
                     caption: 'Name',
-                    size: '20%',
+                    size: '26%',
                     sortable: false,
                     resizable: true,
                     render: 'text'
                 },
                 {
                     field: 'GamesPlayed',
-                    caption: 'Games Played',
-                    size: '10%',
+                    caption: 'GP',
+                    size: '8%',
                     sortable: false,
                     resizable: true,
-                    render: 'text'
+                    render: 'number'
                 },
                 {
                     field: 'Wins',
                     caption: 'Wins',
-                    size: '10%',
+                    size: '8%',
                     sortable: false,
                     resizable: true,
-                    render: 'text'
+                    render: 'number'
                 },
                 {
                     field: 'Losses',
                     caption: 'Losses',
-                    size: '10%',
+                    size: '8%',
                     sortable: false,
                     resizable: true,
-                    render: 'text'
+                    render: 'number'
+                },
+                {
+                    field: 'WinPercentage',
+                    caption: 'Win %',
+                    size: '6%',
+                    sortable: false,
+                    resizable: true,
+                    render: 'percent'
                 },
                 {
                     field: 'Rating',
                     caption: 'Rating',
-                    size: '10%',
+                    size: '8%',
                     sortable: false,
                     resizable: true,
                     render: 'number'
@@ -82,21 +90,24 @@
                 },
                 {
                     field: 'GoalsScoredPerGame',
-                    caption: 'GSG',
-                    size: '10%',
+                    caption: 'GS/G',
+                    size: '8%',
                     sortable: false,
                     resizable: true,
                     render: 'number:2'
                 },
                 {
                     field: 'GoalsAllowedPerGame',
-                    caption: 'GAG',
-                    size: '10%',
+                    caption: 'GA/G',
+                    size: '8%',
                     sortable: false,
                     resizable: true,
                     render: 'number:2'
                 }
-            ]
+            ],
+            onSelect: function (event) {
+                window.location = ('@Url.Action("Details", "Player")/' + event.recid);
+            }
         });
     });
 </script>

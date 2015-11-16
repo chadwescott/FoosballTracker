@@ -14,6 +14,16 @@ namespace Foosball.Web.Models
 
         public string GridTimestamp { get { return Timestamp.ToString(Constants.GridDateFormat); } }
 
+        public bool ShowSummary { get; set; }
+        public string Summary
+        {
+            get
+            {
+                return string.Format("{0} def. {1} ({2} - {3})", Winner.DisplayName, Loser.DisplayName, WinnerScore,
+                    LoserScore);
+            }
+        }
+
         [DisplayName("Winner")]
         public IPlayer Winner { get; set; }
 

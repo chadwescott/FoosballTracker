@@ -21,6 +21,7 @@ namespace Foosball.Repository
 
         public DbSet<DbGame> Games { get; set; }
         public DbSet<DbGameSummary> GameSummaries { get; set; }
+        public DbSet<DbPlayerGameLog> PlayerGameLogs { get; set; }
         public DbSet<DbPlayer> Players { get; set; }
         public DbSet<DbPlayerRecord> PlayerRecords { get; set; }
     }

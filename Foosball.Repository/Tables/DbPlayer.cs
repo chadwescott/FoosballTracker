@@ -13,6 +13,9 @@ namespace Foosball.Repository.Tables
         [Column("Id")]
         public Guid Id { get; set; }
 
+        [NotMapped]
+        public string DisplayName { get { return string.Format("{0} {1}", FirstName, LastName); } }
+
         [Column("UserName")]
         [Required]
         public string UserName { get; set; }

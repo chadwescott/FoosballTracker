@@ -1,4 +1,6 @@
-﻿using System.Web.Mvc;
+﻿using System;
+using System.Linq;
+using System.Web.Mvc;
 using Foosball.Web.Models;
 
 namespace Foosball.Web.Controllers
@@ -15,7 +17,18 @@ namespace Foosball.Web.Controllers
         public ActionResult Add(PlayerViewModel player)
         {
             Commands.AddPlayer(player);
-            return RedirectToAction("Standings", "Player");
+            return RedirectToAction("Standings");
+        }
+
+        public ActionResult Details(string id)
+        {
+            Guid playerId;
+            if (!Guid.TryParse(id, out playerId))
+                return RedirectToAction("Standings");
+            var gameLogs = Commands.GetPlayerGameLogsByPlayerId(playerId);
+            var model = new PlayerDetailsViewModel(gameLogs.ToList()) { Player = Commands.GetPlayerById(playerId) };
+
+            return View(model);
         }
 
         public ActionResult Standings()

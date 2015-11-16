@@ -9,6 +9,7 @@ namespace Foosball.Repository
     {
         DbSet<DbGame> Games { get; set; }
         DbSet<DbGameSummary> GameSummaries { get; set; }
+        DbSet<DbPlayerGameLog> PlayerGameLogs { get; set; }
         DbSet<DbPlayer> Players { get; set; }
         DbSet<DbPlayerRecord> PlayerRecords { get; set; }
     }

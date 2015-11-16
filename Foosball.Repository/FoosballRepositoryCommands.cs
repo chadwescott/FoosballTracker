@@ -18,9 +18,23 @@ namespace Foosball.Repository
             return command.Result;
         }
 
+        public IEnumerable<IGame> GetGamesByPlayerId(Guid playerId)
+        {
+            var command = new GetGamesByPlayerId(playerId);
+            _executer.Execute(command);
+            return command.Result;
+        }
+
         public IPlayer GetPlayerById(Guid id)
         {
             var command = new GetPlayerById(id);
+            _executer.Execute(command);
+            return command.Result;
+        }
+
+        public IEnumerable<IPlayerGameLog> GetPlayerGameLogsByPlayerId(Guid playerId)
+        {
+            var command = new GetPlayerGameLogsByPlayerId(playerId);
             _executer.Execute(command);
             return command.Result;
         }

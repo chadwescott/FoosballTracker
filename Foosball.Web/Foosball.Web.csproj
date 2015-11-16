@@ -186,6 +186,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Constants.cs" />
+    <Compile Include="Controllers\Api\PlayerGamesGridController.cs" />
     <Compile Include="Controllers\Api\PlayerStandingsGridController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\GameController.cs" />
@@ -198,7 +199,9 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\GameViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\IGridModel.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\PlayerDetailsViewModel.cs" />
     <Compile Include="Models\PlayerRecordViewModel.cs" />
     <Compile Include="Models\PlayerViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -259,9 +262,30 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.css.map" />
     <None Include="Properties\PublishProfiles\Localhost.pubxml" />
+    <Content Include="Scripts\Flot\component.json" />
+    <Content Include="Scripts\Flot\flot.jquery.json" />
+    <Content Include="Scripts\Flot\package.json" />
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\Flot\excanvas.js" />
+    <Content Include="Scripts\Flot\excanvas.min.js" />
+    <Content Include="Scripts\Flot\jquery.colorhelpers.js" />
+    <Content Include="Scripts\Flot\jquery.flot.canvas.js" />
+    <Content Include="Scripts\Flot\jquery.flot.categories.js" />
+    <Content Include="Scripts\Flot\jquery.flot.crosshair.js" />
+    <Content Include="Scripts\Flot\jquery.flot.errorbars.js" />
+    <Content Include="Scripts\Flot\jquery.flot.fillbetween.js" />
+    <Content Include="Scripts\Flot\jquery.flot.image.js" />
+    <Content Include="Scripts\Flot\jquery.flot.js" />
+    <Content Include="Scripts\Flot\jquery.flot.navigate.js" />
+    <Content Include="Scripts\Flot\jquery.flot.pie.js" />
+    <Content Include="Scripts\Flot\jquery.flot.resize.js" />
+    <Content Include="Scripts\Flot\jquery.flot.selection.js" />
+    <Content Include="Scripts\Flot\jquery.flot.stack.js" />
+    <Content Include="Scripts\Flot\jquery.flot.symbol.js" />
+    <Content Include="Scripts\Flot\jquery.flot.threshold.js" />
+    <Content Include="Scripts\Flot\jquery.flot.time.js" />
     <Content Include="Scripts\jquery-2.1.4.js" />
     <Content Include="Scripts\jquery-2.1.4.min.js" />
     <Content Include="Scripts\jquery-2.1.4.min.map" />
@@ -295,6 +319,7 @@
     <Content Include="Views\Game\Log.cshtml" />
     <Content Include="Views\Player\Standings.cshtml" />
     <Content Include="Views\Player\Add.cshtml" />
+    <Content Include="Views\Player\Details.cshtml" />
     <None Include="Web.Localhost.config">
       <DependentUpon>Web.config</DependentUpon>
       <SubType>Designer</SubType>

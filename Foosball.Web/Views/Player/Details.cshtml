@@ -1,15 +1,33 @@
-﻿@{
+﻿@model Foosball.Web.Models.PlayerDetailsViewModel
+@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Results</h2>
-<div id="resultsGrid" style="height: 450px"></div>
+<h2>@Model.Player.DisplayName</h2>
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h2 class="panel-title">Rating History</h2>
+    </div>
+    <div class="demo-container">
+        <div class="demo-placeholder" id="ratingChart"></div>
+    </div>
+</div>
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h2 class="panel-title">Results</h2>
+    </div>
+    <div>
+        <div id="resultsGrid" style="height: 450px"></div>
+    </div>
+</div>
 
 <script>
     $(function () {
         $('#resultsGrid').w2grid({
             name: 'resultsGrid',
-            url: '@Url.RouteUrl("DefaultApi", new { httproute = "", controller = "GameResultGrid" })',
+            url: '@Url.RouteUrl("DefaultApi", new { httproute = "", controller = "PlayerGamesGrid", id = Model.Player.Id })',
             autoLoad: true,
             limit: 500,
             msgRefresh: 'Loading',
@@ -58,6 +76,24 @@
                     }
                 }
             ]
+        });
+        
+        var ratingData = @Model.ChartData;
+        $.plot("#ratingChart", [{
+            data: ratingData,
+            color: 'darkgreen',
+            lines: { show: true },
+            points: { show: true, radius: 3 }
+        }],
+        {
+            xaxis: {
+                ticks: 25,
+                tickDecimals: 0
+            },
+            yaxis: {
+                ticks: 10,
+                tickDecimals: 0
+            },
         });
     });
 </script>

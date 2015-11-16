@@ -67,7 +67,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Command\GetGames.cs" />
+    <Compile Include="Command\GetGamesByPlayerId.cs" />
     <Compile Include="Command\GetPlayerById.cs" />
+    <Compile Include="Command\GetPlayerGameLogsByPlayerId.cs" />
     <Compile Include="Command\GetPlayerRecords.cs" />
     <Compile Include="Command\GetPlayers.cs" />
     <Compile Include="Command\RepositoryRead.cs" />
@@ -83,6 +85,7 @@
     <Compile Include="Tables\DbGame.cs" />
     <Compile Include="Views\DbGameSummary.cs" />
     <Compile Include="Tables\DbPlayer.cs" />
+    <Compile Include="Views\DbPlayerGameLog.cs" />
     <Compile Include="Views\DbPlayerRecord.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Command\RepositorySave.cs" />

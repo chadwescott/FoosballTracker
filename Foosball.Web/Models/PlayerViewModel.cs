@@ -8,6 +8,8 @@ namespace Foosball.Web.Models
     {
         public Guid Id { get; set; }
 
+        public string DisplayName { get { return string.Format("{0} {1}", FirstName, LastName); } }
+
         [Required]
         [Display(Name = "User Name")]
         public string UserName { get; set; }
