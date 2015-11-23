@@ -5,26 +5,51 @@
 
 <h2>@Model.Player.DisplayName</h2>
 
-<div class="panel panel-primary">
-    <div class="panel-heading">
-        <h2 class="panel-title">Rating History</h2>
-    </div>
-    <div class="demo-container">
-        <div class="demo-placeholder" id="ratingChart"></div>
-    </div>
-</div>
 
-<div class="panel panel-primary">
-    <div class="panel-heading">
-        <h2 class="panel-title">Results</h2>
+<ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
+    <li class="active"><a href="#ratingHistory" data-toggle="tab">Rating History</a></li>
+    <li id="resultsTabItem"><a href="#results" data-toggle="tab">Results</a></li>
+</ul>
+<div class="tab-content">
+    <div class="tab-pane active" id="ratingHistory">
+        <div class="demo-container">
+            <div class="demo-placeholder" id="ratingChart"></div>
+        </div>
     </div>
-    <div>
+    <div class="tab-pane" id="results">
         <div id="resultsGrid" style="height: 450px"></div>
     </div>
 </div>
 
 <script>
     $(function () {
+        loadResultHistoryChart();
+        $('#resultsTabItem').click(function() {
+            loadResults();
+        });
+    });
+
+    function loadResultHistoryChart() {
+        var ratingData = @Model.ChartData;
+        $.plot("#ratingChart", [{
+            data: ratingData,
+            color: 'darkgreen',
+            lines: { show: true },
+            points: { show: true, radius: 3 }
+        }],
+        {
+            xaxis: {
+                ticks: 25,
+                tickDecimals: 0
+            },
+            yaxis: {
+                ticks: 10,
+                tickDecimals: 0
+            },
+        });
+    }
+
+    function loadResults() {
         $('#resultsGrid').w2grid({
             name: 'resultsGrid',
             url: '@Url.RouteUrl("DefaultApi", new { httproute = "", controller = "PlayerGamesGrid", id = Model.Player.Id })',
@@ -77,23 +102,5 @@
                 }
             ]
         });
-        
-        var ratingData = @Model.ChartData;
-        $.plot("#ratingChart", [{
-            data: ratingData,
-            color: 'darkgreen',
-            lines: { show: true },
-            points: { show: true, radius: 3 }
-        }],
-        {
-            xaxis: {
-                ticks: 25,
-                tickDecimals: 0
-            },
-            yaxis: {
-                ticks: 10,
-                tickDecimals: 0
-            },
-        });
-    });
+    }
 </script>
