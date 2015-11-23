@@ -108,7 +108,7 @@
                         if (record.RatingDelta > 0) {
                             ratingSummary = record.Rating + ' (+' + record.RatingDelta + ')';
                         } else {
-                            ratingSummary = record.Rating + ' <span style="color: red;">(' + record.RatingDelta + ')</span>';
+                            ratingSummary = '<span style="color: red;">' + record.Rating + ' (' + record.RatingDelta + ')</span>';
                         }
                         return ratingSummary;
                     }
