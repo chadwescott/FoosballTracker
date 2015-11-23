@@ -7,9 +7,10 @@ using Foosball.Domain.Model;
 
 namespace Foosball.Web.Models
 {
-    public class GameViewModel : IGame, IViewModel
+    public class GamesViewModel : IGame, IViewModel
     {
         public Guid Id { get; set; }
+
         public DateTime Timestamp { get; set; }
 
         public string GridTimestamp { get { return Timestamp.ToString(Constants.GridDateFormat); } }

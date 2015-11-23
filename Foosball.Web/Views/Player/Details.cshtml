@@ -75,29 +75,42 @@
                     render: 'text'
                 },
                 {
-                    field: 'Summary',
-                    caption: 'Summary',
-                    size: '50%',
+                    field: 'Opponent.DisplayName',
+                    caption: 'Opponent',
+                    size: '30%',
                     sortable: false,
                     resizable: true,
                     render: 'text'
                 },
                 {
-                    caption: 'Winner Rating',
-                    size: '15%',
+                    field: 'Result',
+                    caption: 'Result',
+                    size: '10%',
                     sortable: false,
                     resizable: true,
-                    render: function (record) {
-                        return record.WinnerRating + ' (+' + record.WinnerDelta + ')';
-                    }
+                    render: 'text'
                 },
                 {
-                    caption: 'Loser Rating',
-                    size: '15%',
+                    field: 'Score',
+                    caption: 'Score',
+                    size: '20%',
+                    sortable: false,
+                    resizable: true,
+                    render: 'text'
+                },
+                {
+                    caption: 'Rating',
+                    size: '20%',
                     sortable: false,
                     resizable: true,
                     render: function (record) {
-                        return record.LoserRating + ' <span style="color: red;">(' + record.LoserDelta + ')</span>';
+                        var ratingSummary;
+                        if (record.RatingDelta > 0) {
+                            ratingSummary = record.Rating + ' (+' + record.RatingDelta + ')';
+                        } else {
+                            ratingSummary = record.Rating + ' <span style="color: red;">(' + record.RatingDelta + ')</span>';
+                        }
+                        return ratingSummary;
                     }
                 }
             ]

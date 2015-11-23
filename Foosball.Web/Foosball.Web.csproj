@@ -197,12 +197,13 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\GameViewModel.cs" />
+    <Compile Include="Models\GamesViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\IGridModel.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\PlayerDetailsViewModel.cs" />
     <Compile Include="Models\PlayerRecordViewModel.cs" />
+    <Compile Include="Models\PlayerResultsViewModel.cs" />
     <Compile Include="Models\PlayerViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />

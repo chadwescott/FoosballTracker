@@ -13,7 +13,7 @@ namespace Foosball.Web.Controllers
 
         public ActionResult Add()
         {
-            var model = new GameViewModel
+            var model = new GamesViewModel
             {
                 WinnerScore = 10,
                 LoserScore = 0,
@@ -23,7 +23,7 @@ namespace Foosball.Web.Controllers
         }
 
         [HttpPost]
-        public ActionResult Add(GameViewModel game)
+        public ActionResult Add(GamesViewModel game)
         {
             game.Winner = Commands.GetPlayerById(game.WinnerId);
             game.Loser = Commands.GetPlayerById(game.LoserId);

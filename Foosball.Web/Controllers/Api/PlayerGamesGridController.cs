@@ -11,7 +11,7 @@ namespace Foosball.Web.Controllers.Api
 {
     public class PlayerGamesGridController : ApiController
     {
-        public BaseResponse Post(Guid id, [FromBody]PostData<GameViewModel> data)
+        public BaseResponse Post(Guid id, [FromBody]PostData<GamesViewModel> data)
         {
             switch (data.cmd)
             {
@@ -22,18 +22,18 @@ namespace Foosball.Web.Controllers.Api
             return null;
         }
 
-        protected virtual BaseResponse GetResults(Guid id, PostData<GameViewModel> data)
+        protected virtual BaseResponse GetResults(Guid id, PostData<GamesViewModel> data)
         {
             try
             {
                 var commands = new FoosballCommands();
                 var result = commands.GetGamesByPlayerId(id).OrderByDescending(g => g.Timestamp).ToList();
 
-                return new GetResponse<GameViewModel>
+                return new GetResponse<PlayerResultsViewModel>
                 {
                     status = ResponseCodes.Success,
                     total = result.Count(),
-                    records = result.Select(CreateViewModel).ToList()
+                    records = result.Select(r => CreateViewModel(r, id)).ToList()
                 };
             }
             catch (Exception ex)
@@ -46,9 +46,9 @@ namespace Foosball.Web.Controllers.Api
             }
         }
 
-        private static GameViewModel CreateViewModel(IGame model)
+        private static PlayerResultsViewModel CreateViewModel(IGame model, Guid playerId)
         {
-            return new GameViewModel
+            return new PlayerResultsViewModel
             {
                 Id = model.Id,
                 Loser = model.Loser,
@@ -56,6 +56,7 @@ namespace Foosball.Web.Controllers.Api
                 LoserId = model.Loser.Id,
                 LoserRating = model.LoserRating,
                 LoserScore = model.LoserScore,
+                PlayerId = playerId,
                 Timestamp = model.Timestamp,
                 Winner = model.Winner,
                 WinnerDelta = model.WinnerDelta,
