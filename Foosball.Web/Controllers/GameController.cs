@@ -35,7 +35,7 @@ namespace Foosball.Web.Controllers
 
         private SelectList GetPlayersSelectList()
         {
-            var players = Commands.GetPlayers().ToList();
+            var players = Commands.GetPlayers().OrderBy(p => p.DisplayName).ToList();
             var selectItems =
                 players.Select(
                     p =>
