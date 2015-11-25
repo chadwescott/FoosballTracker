@@ -11,7 +11,7 @@ namespace Foosball.Web.Controllers.Api
 {
     public class PlayerGamesGridController : ApiController
     {
-        public BaseResponse Post(Guid id, [FromBody]PostData<GamesViewModel> data)
+        public BaseResponse Post(Guid id, [FromBody]PostData<GameViewModel> data)
         {
             switch (data.cmd)
             {
@@ -22,7 +22,7 @@ namespace Foosball.Web.Controllers.Api
             return null;
         }
 
-        protected virtual BaseResponse GetResults(Guid id, PostData<GamesViewModel> data)
+        protected virtual BaseResponse GetResults(Guid id, PostData<GameViewModel> data)
         {
             try
             {

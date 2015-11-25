@@ -3,7 +3,7 @@ using Foosball.Domain.Model;
 
 namespace Foosball.Web.Models
 {
-    public class PlayerResultsViewModel : GamesViewModel
+    public class PlayerResultsViewModel : GameViewModel
     {
 
         public Guid PlayerId { get; set; }

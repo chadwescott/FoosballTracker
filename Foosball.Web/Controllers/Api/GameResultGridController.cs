@@ -11,7 +11,7 @@ namespace Foosball.Web.Controllers.Api
 {
     public class GameResultGridController : ApiController
     {
-        public BaseResponse Post([FromBody]PostData<GamesViewModel> data)
+        public BaseResponse Post([FromBody]PostData<GameViewModel> data)
         {
             switch (data.cmd)
             {
@@ -22,14 +22,14 @@ namespace Foosball.Web.Controllers.Api
             return null;
         }
 
-        protected virtual BaseResponse GetResults(PostData<GamesViewModel> data)
+        protected virtual BaseResponse GetResults(PostData<GameViewModel> data)
         {
             try
             {
                 var commands = new FoosballCommands();
                 var result = commands.GetGames().OrderByDescending(g => g.Timestamp).ToList();
 
-                return new GetResponse<GamesViewModel>
+                return new GetResponse<GameViewModel>
                 {
                     status = ResponseCodes.Success,
                     total = result.Count(),
@@ -46,9 +46,9 @@ namespace Foosball.Web.Controllers.Api
             }
         }
 
-        private static GamesViewModel CreateViewModel(IGame model)
+        private static GameViewModel CreateViewModel(IGame model)
         {
-            return new GamesViewModel
+            return new GameViewModel
             {
                 Id = model.Id,
                 Loser = model.Loser,

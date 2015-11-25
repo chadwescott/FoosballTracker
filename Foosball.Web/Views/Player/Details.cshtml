@@ -106,9 +106,9 @@
                     render: function (record) {
                         var ratingSummary;
                         if (record.RatingDelta > 0) {
-                            ratingSummary = record.Rating + ' (+' + record.RatingDelta + ')';
+                            ratingSummary = record.Rating + ' (+' + record.RatingDelta + ') <span class="glyphicon glyphicon-arrow-up">&nbsp;</span>';
                         } else {
-                            ratingSummary = '<span style="color: red;">' + record.Rating + ' (' + record.RatingDelta + ')</span>';
+                            ratingSummary = '<span style="color: red;">' + record.Rating + ' (' + record.RatingDelta + ') <span class="glyphicon glyphicon-arrow-down">&nbsp;</span></span>';
                         }
                         return ratingSummary;
                     }
