@@ -45,7 +45,7 @@
                     sortable: false,
                     resizable: true,
                     render: function (record) {
-                        return record.WinnerRating + ' (+' + record.WinnerDelta + ')';
+                        return record.WinnerRating + ' (+' + record.WinnerDelta + ') <span class="glyphicon glyphicon-arrow-up">&nbsp;</span>';
                     }
                 },
                 {
@@ -54,8 +54,8 @@
                     sortable: false,
                     resizable: true,
                     render: function (record) {
-                        return record.LoserRating + ' <span style="color: red;">(' + record.LoserDelta + ')</span>';
-                    }
+                        return '<span style="color: red;">' + record.LoserRating + ' (' + record.LoserDelta + ') <span class="glyphicon glyphicon-arrow-down">&nbsp;</span></span>';
+}
                 }
             ]
         });
