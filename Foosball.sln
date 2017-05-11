@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Foosball.Repository.Test", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Foosball.Business.Test", "Foosball.Business.Test\Foosball.Business.Test.csproj", "{DBB40805-9863-4986-8CAA-94D506519137}"
 EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Foosball.Database", "Foosball.Database\Foosball.Database.sqlproj", "{C9FBF34D-6F0E-478F-B1D4-08BB5D699C61}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -56,6 +58,15 @@ Global
 		{DBB40805-9863-4986-8CAA-94D506519137}.Localhost|Any CPU.ActiveCfg = Release|Any CPU
 		{DBB40805-9863-4986-8CAA-94D506519137}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DBB40805-9863-4986-8CAA-94D506519137}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9FBF34D-6F0E-478F-B1D4-08BB5D699C61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9FBF34D-6F0E-478F-B1D4-08BB5D699C61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9FBF34D-6F0E-478F-B1D4-08BB5D699C61}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{C9FBF34D-6F0E-478F-B1D4-08BB5D699C61}.Localhost|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9FBF34D-6F0E-478F-B1D4-08BB5D699C61}.Localhost|Any CPU.Build.0 = Debug|Any CPU
+		{C9FBF34D-6F0E-478F-B1D4-08BB5D699C61}.Localhost|Any CPU.Deploy.0 = Debug|Any CPU
+		{C9FBF34D-6F0E-478F-B1D4-08BB5D699C61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9FBF34D-6F0E-478F-B1D4-08BB5D699C61}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9FBF34D-6F0E-478F-B1D4-08BB5D699C61}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
