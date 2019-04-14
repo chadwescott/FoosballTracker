@@ -17,7 +17,7 @@ namespace Foosball.Business
         public void Execute()
         {
             var commands = new FoosballRepositoryCommands();
-            var rating = new EloRating(_game.Winner.Rating, _game.Loser.Rating, 1, 0);
+            var rating = new EloRating(_game.Winner.Rating, _game.Loser.Rating, _game.WinnerScore, _game.LoserScore);
 
             var winnerHistory = new RatingHistory { Rating = rating.FinalResult1, Game = _game, Delta = rating.Point1, Player = _game.Winner };
             var loserHistory = new RatingHistory { Rating = rating.FinalResult2, Game = _game, Delta = rating.Point2, Player = _game.Loser };
