@@ -13,23 +13,11 @@ namespace Foosball.Web.Controllers
 
         public ActionResult Add()
         {
-            var players = Commands.GetPlayers().ToList();
-            var selectItems =
-                players.Select(
-                    p =>
-                        new SelectListItem
-                        {
-                            Text = string.Format("{0} {1}", p.FirstName, p.LastName),
-                            Value = p.Id.ToString()
-                        });
-
             var model = new GameViewModel
             {
-                Winner = players.Single(p => p.FirstName == "Chad"),
-                Loser = players.Single(p => p.FirstName == "Nancy"),
                 WinnerScore = 10,
                 LoserScore = 0,
-                Players = new SelectList(selectItems, "Value", "Text")
+                Players = GetPlayersSelectList()
             };
             return View(model);
         }
@@ -37,10 +25,26 @@ namespace Foosball.Web.Controllers
         [HttpPost]
         public ActionResult Add(GameViewModel game)
         {
-            game.Winner = new PlayerViewModel { Id = game.WinnerId };
-            game.Loser = new PlayerViewModel { Id = game.LoserId };
+            game.Winner = Commands.GetPlayerById(game.WinnerId);
+            game.Loser = Commands.GetPlayerById(game.LoserId);
             game.Id = Commands.SaveGame(game).Id;
-            return RedirectToAction("Standings", "Player");
+            game.Players = GetPlayersSelectList();
+            game.ShowSummary = true;
+            return View(game);
+        }
+
+        private SelectList GetPlayersSelectList()
+        {
+            var players = Commands.GetPlayers().OrderBy(p => p.DisplayName).ToList();
+            var selectItems =
+                players.Select(
+                    p =>
+                        new SelectListItem
+                        {
+                            Text = p.DisplayName,
+                            Value = p.Id.ToString()
+                        });
+            return new SelectList(selectItems, "Value", "Text");
         }
     }
 }

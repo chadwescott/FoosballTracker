@@ -8,50 +8,59 @@
     @Styles.Render("~/Content/jqueryui")
     @Styles.Render("~/Content/w2ui-css")
     @Styles.Render("~/Content/css")
+    <link href="~/Content/themes/green.css" rel="stylesheet" type="text/css" />
 
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/bundles/w2ui")
+    @Scripts.Render("~/bundles/charts")
     @RenderSection("scripts", required: false)
 </head>
 <body>
-    <div class="navbar navbar-fixed-top navbar-default">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <span class="navbar-brand" href="#">Foosball Tracker</span>
+    <div id="wrap">
+        <div class="navbar navbar-fixed-top navbar-default">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <span class="navbar-brand" href="#">Foosball Tracker</span>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Player <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li>@Html.ActionLink("Standings", "Standings", "Player")</li>
+                                <li>@Html.ActionLink("Add", "Add", "Player")</li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Games <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li>@Html.ActionLink("Add", "Add", "Game")</li>
+                                <li>@Html.ActionLink("Game Log", "Log", "Game")</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <div class="collapse navbar-collapse">
-                <ul class="nav navbar-nav">
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Player <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li>@Html.ActionLink("Standings", "Standings", "Player")</li>
-                            <li>@Html.ActionLink("Add", "Add", "Player")</li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Games <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li>@Html.ActionLink("Add", "Add", "Game")</li>
-                            <li>@Html.ActionLink("Game Log", "Log", "Game")</li>
-                        </ul>
-                    </li>
-                </ul>
+        </div>
+        <div class="center-container">
+            <div class="center-row">
+                <div class="container body-content">
+                    @RenderBody()
+                </div>
             </div>
         </div>
     </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - Foosball Tracker</p>
+    <div class="container-fluid footer">
+        <footer class="container">
+            <div>&copy; @DateTime.Now.Year - Foosball Tracker</div>
         </footer>
     </div>
 </body>

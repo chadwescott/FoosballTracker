@@ -52,11 +52,15 @@ namespace Foosball.Web.Controllers.Api
             {
                 Id = model.Id,
                 Loser = model.Loser,
+                LoserDelta = model.LoserDelta,
                 LoserId = model.Loser.Id,
+                LoserRating = model.LoserRating,
                 LoserScore = model.LoserScore,
                 Timestamp = model.Timestamp,
                 Winner = model.Winner,
+                WinnerDelta = model.WinnerDelta,
                 WinnerId = model.Winner.Id,
+                WinnerRating = model.WinnerRating,
                 WinnerScore = model.WinnerScore
             };
         }

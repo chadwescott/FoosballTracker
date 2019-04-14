@@ -1,9 +1,9 @@
 ﻿using System;
-using Foosball.Repository.Model;
+using Foosball.Repository.Tables;
 
 namespace Foosball.Repository.Command
 {
-    internal class GetPlayerById : RepositoryRead<Player, Player>
+    internal class GetPlayerById : RepositoryRead<DbPlayer, DbPlayer>
     {
         private readonly Guid _id;
 

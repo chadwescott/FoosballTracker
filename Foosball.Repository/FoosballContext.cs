@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Data.Entity;
 using CooperVision.DataAccess.Context;
-using Foosball.Repository.Model;
+using Foosball.Repository.Tables;
+using Foosball.Repository.Views;
 
 namespace Foosball.Repository
 {
@@ -18,9 +19,10 @@ namespace Foosball.Repository
             Database.CommandTimeout = Math.Max(Database.Connection.ConnectionTimeout, minCommandTimeout);
         }
 
-        public DbSet<Player> Players { get; set; }
-        public DbSet<Game> Games { get; set; }
-        public DbSet<PlayerRecord> PlayerRecords { get; set; }
-        public DbSet<RatingHistory> RatingHistory { get; set; }
+        public DbSet<DbGame> Games { get; set; }
+        public DbSet<DbGameSummary> GameSummaries { get; set; }
+        public DbSet<DbPlayerGameLog> PlayerGameLogs { get; set; }
+        public DbSet<DbPlayer> Players { get; set; }
+        public DbSet<DbPlayerRecord> PlayerRecords { get; set; }
     }
 }

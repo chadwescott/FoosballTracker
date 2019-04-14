@@ -28,7 +28,7 @@ namespace Foosball.Web
                       "~/Content/site.css"));
 
             // w2ui
-            bundles.Add(new StyleBundle("~/Content/w2ui-css").Include("~/Content/w2ui-{version}.css"));
+            bundles.Add(new StyleBundle("~/Content/w2ui-css").Include("~/Content/w2ui-{version}-custom.css"));
             bundles.Add(new ScriptBundle("~/bundles/w2ui").Include("~/Scripts/w2ui-{version}.js").Include("~/Scripts/w2uisettings.js"));
 
             // jquery ui css
@@ -45,6 +45,9 @@ namespace Foosball.Web
                         "~/Content/themes/base/datepicker.css",
                         "~/Content/themes/base/progressbar.css",
                         "~/Content/themes/base/theme-custom.css"));
+
+            // charts
+            bundles.Add(new ScriptBundle("~/bundles/charts").Include("~/Scripts/Flot/excanvas.min.js", "~/Scripts/Flot/jquery.flot.js"));
         }
     }
 }

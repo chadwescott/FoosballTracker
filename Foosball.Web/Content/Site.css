@@ -1,12 +1,52 @@
-﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+﻿html,
+body {
+    height: 100%;
+    /* The html and body elements cannot have any padding or margin. */
+}
+
+/* Wrapper for page content to push down footer */
+#wrap {
+    min-height: 100%;
+    height: 100%;
+    /* Negative indent footer by its height */
+    margin: 0 auto -27px 0;
+    /* Pad bottom by footer height */
+    padding: 0 0 25px 0;
+}
+
+
+    #wrap > .center-container {
+        padding: 50px 0 0 0;
+        margin: 0;
+    }
+
+/* Set the fixed height of the footer here */
+.footer {
+    height: 25px;
+    font-size: 12px;
+    border-top: thin solid #e7e7e7;
+}
+
+    .footer > .container {
+        padding: 4px 15px 5px 15px;
+    }
+
+.center-container {
+    height: 100%;
+}
+
+.center-row {
+    height: 100%;
+    background-size: cover;
 }
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+    min-height: 100%;
+    height: 100%;
+    background-color: white;
+    border-bottom: solid thin #e7e7e7;
+    overflow: auto;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -21,4 +61,29 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+.demo-placeholder {
+    width: inherit;
+    height: inherit;
+    font-size: 14px;
+    line-height: 1.2em;
+}
+
+.demo-container {
+    box-sizing: border-box;
+    height: 450px;
+    width: 100%;
+    border: 1px solid #ddd;
+    background: #fff;
+    background: linear-gradient(#f6f6f6 0, #fff 50px);
+    background: -o-linear-gradient(#f6f6f6 0, #fff 50px);
+    background: -ms-linear-gradient(#f6f6f6 0, #fff 50px);
+    background: -moz-linear-gradient(#f6f6f6 0, #fff 50px);
+    background: -webkit-linear-gradient(#f6f6f6 0, #fff 50px);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+    -o-box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    -ms-box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    -moz-box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    -webkit-box-shadow: 0 3px 10px rgba(0,0,0,0.1);
 }

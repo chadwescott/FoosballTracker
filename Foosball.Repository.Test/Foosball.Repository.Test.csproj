@@ -71,11 +71,10 @@
   <ItemGroup>
     <Compile Include="Command\CommandTest.cs" />
     <Compile Include="Command\GetGamesTest.cs" />
+    <Compile Include="Command\GetPlayerGameLogsByIdTest.cs" />
     <Compile Include="Command\GetPlayerRecordsTest.cs" />
     <Compile Include="Command\GetPlayersTest.cs" />
     <Compile Include="Command\SaveGameTest.cs" />
-    <Compile Include="Model\Game.cs" />
-    <Compile Include="Model\Player.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

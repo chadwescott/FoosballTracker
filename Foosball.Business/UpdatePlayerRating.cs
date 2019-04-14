@@ -1,5 +1,4 @@
-﻿using Foosball.Business.Model;
-using Foosball.Domain.Command;
+﻿using Foosball.Domain.Command;
 using Foosball.Domain.Model;
 using Foosball.Repository;
 
@@ -19,10 +18,11 @@ namespace Foosball.Business
             var commands = new FoosballRepositoryCommands();
             var rating = new EloRating(_game.Winner.Rating, _game.Loser.Rating, _game.WinnerScore, _game.LoserScore);
 
-            var winnerHistory = new RatingHistory { Rating = rating.FinalResult1, Game = _game, Delta = rating.Point1, Player = _game.Winner };
-            var loserHistory = new RatingHistory { Rating = rating.FinalResult2, Game = _game, Delta = rating.Point2, Player = _game.Loser };
-            commands.SaveRatingHistory(winnerHistory);
-            commands.SaveRatingHistory(loserHistory);
+            _game.WinnerRating = rating.FinalResult1;
+            _game.WinnerDelta = rating.Point1;
+            _game.LoserRating = rating.FinalResult2;
+            _game.LoserDelta = rating.Point2;
+            commands.SaveGame(_game);
 
             _game.Winner.Rating = rating.FinalResult1;
             _game.Loser.Rating = rating.FinalResult2;

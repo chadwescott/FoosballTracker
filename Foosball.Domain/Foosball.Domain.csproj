@@ -56,11 +56,16 @@
     <Compile Include="Command\CommandExecuter.cs" />
     <Compile Include="Command\ICommand.cs" />
     <Compile Include="Command\ICommandWithResult.cs" />
+    <Compile Include="Model\Game.cs" />
     <Compile Include="Model\IGame.cs" />
     <Compile Include="Model\IHasId.cs" />
     <Compile Include="Model\IPlayer.cs" />
+    <Compile Include="Model\IPlayerGameLog.cs" />
     <Compile Include="Model\IPlayerRecord.cs" />
     <Compile Include="Model\IRatingHistory.cs" />
+    <Compile Include="Model\Player.cs" />
+    <Compile Include="Model\PlayerGameLog.cs" />
+    <Compile Include="Model\PlayerRecord.cs" />
     <Compile Include="ObjectExtensionMethods.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

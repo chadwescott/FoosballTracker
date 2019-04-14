@@ -52,8 +52,6 @@
   <ItemGroup>
     <Compile Include="EloRating.cs" />
     <Compile Include="FoosballCommands.cs" />
-    <Compile Include="Model\Player.cs" />
-    <Compile Include="Model\RatingHistory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UpdatePlayerRating.cs" />
   </ItemGroup>

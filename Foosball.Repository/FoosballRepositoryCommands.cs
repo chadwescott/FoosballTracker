@@ -18,9 +18,23 @@ namespace Foosball.Repository
             return command.Result;
         }
 
+        public IEnumerable<IGame> GetGamesByPlayerId(Guid playerId)
+        {
+            var command = new GetGamesByPlayerId(playerId);
+            _executer.Execute(command);
+            return command.Result;
+        }
+
         public IPlayer GetPlayerById(Guid id)
         {
             var command = new GetPlayerById(id);
+            _executer.Execute(command);
+            return command.Result;
+        }
+
+        public IEnumerable<IPlayerGameLog> GetPlayerGameLogsByPlayerId(Guid playerId)
+        {
+            var command = new GetPlayerGameLogsByPlayerId(playerId);
             _executer.Execute(command);
             return command.Result;
         }
@@ -43,7 +57,7 @@ namespace Foosball.Repository
         {
             var winner = GetPlayerById(game.Winner.Id);
             var loser = GetPlayerById(game.Loser.Id);
-            var dbGame = GameFactory.MakeGame(game);
+            var dbGame = DbGameFactory.Make(game);
             var command = new SaveGame(dbGame);
             _executer.Execute(command);
             dbGame.Winner = winner;
@@ -53,15 +67,8 @@ namespace Foosball.Repository
 
         public IPlayer SavePlayer(IPlayer player)
         {
-            var command = new SavePlayer(PlayerFactory.MakePlayer(player));
+            var command = new SavePlayer(DbPlayerFactory.Make(player));
             _executer.Execute(command);
-            return command.Result;
-        }
-
-        public IRatingHistory SaveRatingHistory(IRatingHistory ratingHistory)
-        {
-            var command = new SaveRatingHistory(RatingHistoryFactory.MakeGame(ratingHistory));
-            command.Execute();
             return command.Result;
         }
     }

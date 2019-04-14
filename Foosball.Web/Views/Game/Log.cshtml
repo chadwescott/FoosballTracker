@@ -6,7 +6,7 @@
 <div id="resultsGrid" style="height: 450px"></div>
 
 <script>
-    $(function() {
+    $(function () {
         $('#resultsGrid').w2grid({
             name: 'resultsGrid',
             url: '@Url.RouteUrl("DefaultApi", new { httproute = "", controller = "GameResultGrid" })',
@@ -24,38 +24,38 @@
             },
             columns: [
                 {
-                    field: 'Timestamp',
+                    field: 'GridTimestamp',
                     caption: 'Timestamp',
-                    size: '25%',
-                    sortable: true,
+                    size: '20%',
+                    sortable: false,
                     resizable: true,
-                    type: 'date'
+                    render: 'text'
                 },
                 {
-                    field: 'Winner.FirstName',
-                    caption: 'Winner',
-                    size: '25%',
-                    sortable: true,
+                    field: 'Summary',
+                    caption: 'Summary',
+                    size: '50%',
+                    sortable: false,
                     resizable: true,
-                    type: 'text'
+                    render: 'text'
                 },
                 {
-                    field: 'Loser.FirstName',
-                    caption: 'Loser',
-                    size: '25%',
-                    sortable: true,
+                    caption: 'Winner Rating',
+                    size: '15%',
+                    sortable: false,
                     resizable: true,
-                    type: 'text'
-                },
-                {
-                    caption: 'Score',
-                    size: '25%',
-                    sortable: true,
-                    resizable: true,
-                    type: 'text',
-                    render: function(record) {
-                        return record.WinnerScore + ' - ' + record.LoserScore;
+                    render: function (record) {
+                        return record.WinnerRating + ' (+' + record.WinnerDelta + ') <span class="glyphicon glyphicon-arrow-up">&nbsp;</span>';
                     }
+                },
+                {
+                    caption: 'Loser Rating',
+                    size: '15%',
+                    sortable: false,
+                    resizable: true,
+                    render: function (record) {
+                        return '<span style="color: red;">' + record.LoserRating + ' (' + record.LoserDelta + ') <span class="glyphicon glyphicon-arrow-down">&nbsp;</span></span>';
+}
                 }
             ]
         });

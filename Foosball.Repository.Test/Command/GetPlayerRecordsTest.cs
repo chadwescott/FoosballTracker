@@ -7,7 +7,7 @@ namespace Foosball.Repository.Test.Command
     public class GetPlayerRecordsTest : CommandTest
     {
         [TestMethod]
-        public void GetGamesValidTest()
+        public void GetPlayerRecordsValidTest()
         {
             var playerRecords = Commands.GetPlayerRecords().ToList();
             Assert.IsNotNull(playerRecords);

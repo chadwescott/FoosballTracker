@@ -53,11 +53,8 @@
   -ms-box-sizing: border-box;
   -o-box-sizing: border-box;
   box-sizing: border-box;
-  font-family: Verdana, Arial, sans-serif;
-  font-size: 11px;
 }
 .w2ui-reset * {
-  color: default;
   line-height: 100%;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -109,30 +106,9 @@
 /*************************************************
 * ---- Input Controls ----
 */
-input:not([type=button]),
-select,
-textarea {
-  padding: 4px;
-  border: 1px solid #bbbbbb;
-  border-radius: 3px;
-  color: #000000;
-  background-color: #ffffff;
-  line-height: normal;
-}
-input:not([type=button]):focus,
-select:focus,
-textarea:focus {
-  outline-color: #72b2ff;
-}
-input:not([type=button]):disabled,
-select:disabled,
-textarea:disabled,
-input:not([type=button])[readonly],
-select[readonly],
-textarea[readonly] {
-  background-color: #f1f1f1;
-  color: #777;
-}
+
+
+
 /* IE9-11 specific classes */
 /* needs doblue :: */
 input::-ms-clear {
@@ -215,14 +191,14 @@ input[type=checkbox].w2ui-toggle:focus {
 */
 .w2ui-overlay {
   position: absolute;
-  margin-top: 6px;
-  margin-left: -17px;
+  margin-top: 0px;
+  margin-left: -18px;
   display: none;
   z-index: 1300;
   color: inherit;
   background-color: #fbfbfb;
-  border: 3px solid #777777;
-  box-shadow: 0px 2px 10px #999999;
+  border: 1px solid #777777;
+  box-shadow: 4px 4px 10px #999999;
   border-radius: 4px;
   text-align: left;
 }
@@ -239,13 +215,13 @@ input[type=checkbox].w2ui-toggle:focus {
   transform: rotate(-45deg);
   width: 12px;
   height: 12px;
-  border: 3px solid #777777;
+  border: 1px solid #777777;
   border-color: inherit;
   background-color: inherit;
   border-left: 1px solid transparent;
   border-bottom: 1px solid transparent;
   border-bottom-left-radius: 50px;
-  margin: -9px 0 0 30px;
+  margin: -7px 0 0 30px;
 }
 .w2ui-overlay:after {
   display: none;
@@ -258,7 +234,7 @@ input[type=checkbox].w2ui-toggle:focus {
   transform: rotate(135deg);
   width: 12px;
   height: 12px;
-  border: 3px solid #777777;
+  border: 1px solid #777777;
   border-color: inherit;
   background-color: inherit;
   border-left: 1px solid transparent;
@@ -290,8 +266,6 @@ input[type=checkbox].w2ui-toggle:focus {
   color: #ffffff !important;
   box-shadow: 1px 1px 3px #000000;
   line-height: 100%;
-  font-size: 11px;
-  font-family: Verdana, Arial, sans-serif;
 }
 .w2ui-tag .w2ui-tag-body:before {
   content: "";
@@ -311,7 +285,6 @@ input[type=checkbox].w2ui-toggle:focus {
 */
 .w2ui-overlay table.w2ui-drop-menu {
   width: 100%;
-  color: #000000;
   background-color: #ffffff;
   padding: 5px 0px;
   cursor: default;
@@ -371,7 +344,6 @@ input[type=checkbox].w2ui-toggle:focus {
   background-color: white !important;
 }
 .w2ui-overlay table.w2ui-drop-menu .w2ui-icon {
-  font-size: 14px;
   color: #8d99a7;
   display: inline-block;
   padding-top: 4px;
@@ -442,8 +414,6 @@ input[type=checkbox].w2ui-toggle:focus {
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
-  font-size: 13px;
-  font-family: Verdana, Arial, sans-serif;
   opacity: 0.8;
   filter: alpha(opacity=80);
   background-color: #555555;
@@ -458,202 +428,51 @@ input[type=checkbox].w2ui-toggle:focus {
   height: 24px;
   margin: -3px 8px -7px -10px;
 }
+
 button.btn {
-  display: inline-block;
-  border-radius: 4px;
-  margin: 0px 5px;
-  padding: 7px 12px 6px 12px !important;
-  color: #666;
-  font-size: 12px !important;
-  border: 1px solid #B6B6B6;
-  background-image: -webkit-linear-gradient(#ffffff 0%, #e7e7e7 100%);
-  background-image: -moz-linear-gradient(#ffffff 0%, #e7e7e7 100%);
-  background-image: -ms-linear-gradient(#ffffff 0%, #e7e7e7 100%);
-  background-image: -o-linear-gradient(#ffffff 0%, #e7e7e7 100%);
-  background-image: linear-gradient(#ffffff 0%, #e7e7e7 100%);
-  filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ffe7e7e7', endColorstr='#ffffffff', GradientType=0);
-  outline: none;
-  box-shadow: 0px 1px 0px white;
-  cursor: default;
-  min-width: 75px;
-  line-height: 100% !important;
-  user-select: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  -o-user-select: none;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 button.btn:hover {
-  text-decoration: none;
-  border: 1px solid #bbb;
-  background-image: -webkit-linear-gradient(#f7f7f7 0%, #dddddd 100%);
-  background-image: -moz-linear-gradient(#f7f7f7 0%, #dddddd 100%);
-  background-image: -ms-linear-gradient(#f7f7f7 0%, #dddddd 100%);
-  background-image: -o-linear-gradient(#f7f7f7 0%, #dddddd 100%);
-  background-image: linear-gradient(#f7f7f7 0%, #dddddd 100%);
-  filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ffdddddd', endColorstr='#fff7f7f7', GradientType=0);
-  color: #333;
 }
 button.btn:active,
 button.btn.clicked {
-  border: 1px solid #999;
-  background-image: -webkit-linear-gradient(#cccccc 0%, #cccccc 100%);
-  background-image: -moz-linear-gradient(#cccccc 0%, #cccccc 100%);
-  background-image: -ms-linear-gradient(#cccccc 0%, #cccccc 100%);
-  background-image: -o-linear-gradient(#cccccc 0%, #cccccc 100%);
-  background-image: linear-gradient(#cccccc 0%, #cccccc 100%);
-  filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ffcccccc', endColorstr='#ffcccccc', GradientType=0);
-  text-shadow: 1px 1px 1px #eee;
 }
 button.btn:disabled {
-  border: 1px solid #bbb !important;
-  background: #f7f7f7 !important;
-  color: #bdbcbc !important;
-  text-shadow: none !important;
 }
 button.btn-blue {
-  color: white;
-  background-image: -webkit-linear-gradient(#80c0f7 0%, #269df0 100%);
-  background-image: -moz-linear-gradient(#80c0f7 0%, #269df0 100%);
-  background-image: -ms-linear-gradient(#80c0f7 0%, #269df0 100%);
-  background-image: -o-linear-gradient(#80c0f7 0%, #269df0 100%);
-  background-image: linear-gradient(#80c0f7 0%, #269df0 100%);
-  filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ff269df0', endColorstr='#ff80c0f7', GradientType=0);
-  border: 1px solid #538AB7;
-  text-shadow: 1px 1px 1px #777777;
 }
 button.btn-blue:hover {
-  color: white;
-  background-image: -webkit-linear-gradient(#73b6f0 0%, #2391dd 100%);
-  background-image: -moz-linear-gradient(#73b6f0 0%, #2391dd 100%);
-  background-image: -ms-linear-gradient(#73b6f0 0%, #2391dd 100%);
-  background-image: -o-linear-gradient(#73b6f0 0%, #2391dd 100%);
-  background-image: linear-gradient(#73b6f0 0%, #2391dd 100%);
-  filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ff2391dd', endColorstr='#ff73b6f0', GradientType=0);
-  border: 1px solid #497BA3;
-  text-shadow: 1px 1px 1px #777777;
 }
 button.btn-blue:active,
 button.btn-blue.clicked {
-  color: white;
-  background-image: -webkit-linear-gradient(#1e83c9 0%, #1e83c9 100%);
-  background-image: -moz-linear-gradient(#1e83c9 0%, #1e83c9 100%);
-  background-image: -ms-linear-gradient(#1e83c9 0%, #1e83c9 100%);
-  background-image: -o-linear-gradient(#1e83c9 0%, #1e83c9 100%);
-  background-image: linear-gradient(#1e83c9 0%, #1e83c9 100%);
-  filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ff1e83c9', endColorstr='#ff1e83c9', GradientType=0);
-  border: 1px solid #1268A6;
-  text-shadow: 1px 1px 1px #777777;
 }
 button.btn-green {
-  color: white;
-  background-image: -webkit-linear-gradient(#81cf81 0%, #52a452 100%);
-  background-image: -moz-linear-gradient(#81cf81 0%, #52a452 100%);
-  background-image: -ms-linear-gradient(#81cf81 0%, #52a452 100%);
-  background-image: -o-linear-gradient(#81cf81 0%, #52a452 100%);
-  background-image: linear-gradient(#81cf81 0%, #52a452 100%);
-  filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ff52a452', endColorstr='#ff81cf81', GradientType=0);
-  border: 1px solid #479247;
-  text-shadow: 1px 1px 1px #777777;
 }
 button.btn-green:hover {
-  color: white;
-  background-image: -webkit-linear-gradient(#6abe68 0%, #3f8f3d 100%);
-  background-image: -moz-linear-gradient(#6abe68 0%, #3f8f3d 100%);
-  background-image: -ms-linear-gradient(#6abe68 0%, #3f8f3d 100%);
-  background-image: -o-linear-gradient(#6abe68 0%, #3f8f3d 100%);
-  background-image: linear-gradient(#6abe68 0%, #3f8f3d 100%);
-  filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ff3f8f3d', endColorstr='#ff6abe68', GradientType=0);
-  border: 1px solid #479247;
-  text-shadow: 1px 1px 1px #777777;
 }
 button.btn-green:active,
 button.btn-green.clicked {
-  color: white;
-  background-image: -webkit-linear-gradient(#377d36 0%, #377d36 100%);
-  background-image: -moz-linear-gradient(#377d36 0%, #377d36 100%);
-  background-image: -ms-linear-gradient(#377d36 0%, #377d36 100%);
-  background-image: -o-linear-gradient(#377d36 0%, #377d36 100%);
-  background-image: linear-gradient(#377d36 0%, #377d36 100%);
-  filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ff377d36', endColorstr='#ff377d36', GradientType=0);
-  border: 1px solid #555 !important;
-  text-shadow: 1px 1px 1px #777777;
 }
 button.btn-orange {
-  color: white;
-  background-image: -webkit-linear-gradient(#fcc272 0%, #fb8822 100%);
-  background-image: -moz-linear-gradient(#fcc272 0%, #fb8822 100%);
-  background-image: -ms-linear-gradient(#fcc272 0%, #fb8822 100%);
-  background-image: -o-linear-gradient(#fcc272 0%, #fb8822 100%);
-  background-image: linear-gradient(#fcc272 0%, #fb8822 100%);
-  filter: progid:dximagetransform.microsoft.gradient(startColorstr='#fffb8822', endColorstr='#fffcc272', GradientType=0);
-  border: 1px solid #B68B4C;
-  text-shadow: 1px 1px 1px #777777;
 }
 button.btn-orange:hover {
-  color: white;
-  background-image: -webkit-linear-gradient(#f4ad59 0%, #f1731f 100%);
-  background-image: -moz-linear-gradient(#f4ad59 0%, #f1731f 100%);
-  background-image: -ms-linear-gradient(#f4ad59 0%, #f1731f 100%);
-  background-image: -o-linear-gradient(#f4ad59 0%, #f1731f 100%);
-  background-image: linear-gradient(#f4ad59 0%, #f1731f 100%);
-  filter: progid:dximagetransform.microsoft.gradient(startColorstr='#fff1731f', endColorstr='#fff4ad59', GradientType=0);
-  border: 1px solid #B68B4C;
-  text-shadow: 1px 1px 1px #777777;
 }
 button.btn-orange:active,
 button.btn-orange.clicked {
-  color: white;
-  border: 1px solid #666;
-  background-image: -webkit-linear-gradient(#b98747 0%, #b98747 100%);
-  background-image: -moz-linear-gradient(#b98747 0%, #b98747 100%);
-  background-image: -ms-linear-gradient(#b98747 0%, #b98747 100%);
-  background-image: -o-linear-gradient(#b98747 0%, #b98747 100%);
-  background-image: linear-gradient(#b98747 0%, #b98747 100%);
-  filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ffb98747', endColorstr='#ffb98747', GradientType=0);
-  text-shadow: 1px 1px 1px #777777;
 }
 button.btn-red {
-  color: white;
-  background-image: -webkit-linear-gradient(#ff6e70 0%, #c72d2d 100%);
-  background-image: -moz-linear-gradient(#ff6e70 0%, #c72d2d 100%);
-  background-image: -ms-linear-gradient(#ff6e70 0%, #c72d2d 100%);
-  background-image: -o-linear-gradient(#ff6e70 0%, #c72d2d 100%);
-  background-image: linear-gradient(#ff6e70 0%, #c72d2d 100%);
-  filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ffc72d2d', endColorstr='#ffff6e70', GradientType=0);
-  border: 1px solid #BB3C3E;
-  text-shadow: 1px 1px 1px #777777;
 }
 button.btn-red:hover {
-  color: white;
-  background-image: -webkit-linear-gradient(#ee696c 0%, #ae2527 100%);
-  background-image: -moz-linear-gradient(#ee696c 0%, #ae2527 100%);
-  background-image: -ms-linear-gradient(#ee696c 0%, #ae2527 100%);
-  background-image: -o-linear-gradient(#ee696c 0%, #ae2527 100%);
-  background-image: linear-gradient(#ee696c 0%, #ae2527 100%);
-  filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ffae2527', endColorstr='#ffee696c', GradientType=0);
-  border: 1px solid #BB3C3E;
-  text-shadow: 1px 1px 1px #777777;
 }
 button.btn-red:active,
 button.btn-red.clicked {
-  color: white;
-  border: 1px solid #861C1E;
-  background-image: -webkit-linear-gradient(#9c2123 0%, #9c2123 100%);
-  background-image: -moz-linear-gradient(#9c2123 0%, #9c2123 100%);
-  background-image: -ms-linear-gradient(#9c2123 0%, #9c2123 100%);
-  background-image: -o-linear-gradient(#9c2123 0%, #9c2123 100%);
-  background-image: linear-gradient(#9c2123 0%, #9c2123 100%);
-  filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ff9c2123', endColorstr='#ff9c2123', GradientType=0);
-  text-shadow: 1px 1px 1px #777777;
 }
+
+
 /*************************************************
 * ---- Forms ----
 */
 .w2ui-form {
   position: relative;
-  color: #000000;
   background-color: #f5f6f7;
   border: 1px solid #c0c0c0;
   border-radius: 3px;
@@ -670,8 +489,6 @@ button.btn-red.clicked {
   right: 0;
   border-bottom: 1px solid #99bbe8 !important;
   overflow: hidden;
-  color: #444444;
-  font-size: 13px;
   text-align: center;
   padding: 8px;
   background-image: -webkit-linear-gradient(#dae6f3, #c2d5ed);
@@ -748,7 +565,6 @@ button.btn-red.clicked {
   padding: 5px 2px;
   color: #8D96A2;
   text-shadow: 1px 1px 2px #fdfdfd;
-  font-size: 120%;
 }
 .w2ui-group {
   background-color: #ebecef;
@@ -1040,13 +856,11 @@ button.btn-red.clicked {
 .w2ui-calendar .w2ui-calendar-jump .w2ui-jump-month:hover,
 .w2ui-calendar .w2ui-calendar-jump .w2ui-jump-year:hover {
   border: 1px solid #cccccc;
-  color: #000000;
   background-color: #efefef;
 }
 .w2ui-calendar .w2ui-calendar-jump .w2ui-jump-month.selected,
 .w2ui-calendar .w2ui-calendar-jump .w2ui-jump-year.selected {
   border: 1px solid #cccccc;
-  color: #000000;
   background-color: #dadada;
 }
 .w2ui-calendar .w2ui-calendar-previous,
@@ -1105,7 +919,6 @@ button.btn-red.clicked {
 }
 .w2ui-calendar table.w2ui-calendar-days td {
   border: 1px solid #ffffff;
-  color: #000000;
   background-color: #f9f9f9;
   padding: 6px;
   cursor: default;
@@ -1120,7 +933,6 @@ button.btn-red.clicked {
 .w2ui-calendar table.w2ui-calendar-days td.w2ui-saturday:hover,
 .w2ui-calendar table.w2ui-calendar-days td.w2ui-sunday:hover {
   border: 1px solid #cccccc;
-  color: #000000;
   background-color: #e9e9e9;
 }
 .w2ui-calendar table.w2ui-calendar-days td.w2ui-saturday.w2ui-blocked,
@@ -1132,12 +944,10 @@ button.btn-red.clicked {
 }
 .w2ui-calendar table.w2ui-calendar-days td.w2ui-today {
   border: 1px solid #8cb067;
-  color: #000000;
   background-color: #e2f7cd;
 }
 .w2ui-calendar table.w2ui-calendar-days td:hover {
   border: 1px solid #cccccc;
-  color: #000000;
   background-color: #e9e9e9;
 }
 .w2ui-calendar table.w2ui-calendar-days td.w2ui-blocked {
@@ -1175,7 +985,6 @@ button.btn-red.clicked {
 }
 .w2ui-calendar-time td div:hover {
   border: 1px solid #cccccc;
-  color: #000000;
   background-color: #e9e9e9;
 }
 .w2ui-calendar-time td div.w2ui-blocked {
@@ -1237,8 +1046,6 @@ button.btn-red.clicked {
   background-color: #eff3f5;
   white-space: nowrap;
   cursor: default;
-  font-family: verdana;
-  font-size: 11px;
   line-height: 100%;
   height: 20px;
   overflow: hidden;
@@ -1425,7 +1232,6 @@ button.btn-red.clicked {
   height: 28px;
   overflow: hidden;
   color: #444444;
-  font-size: 13px;
   text-align: center;
   padding: 7px;
   background-image: -webkit-linear-gradient(#dae6f3, #c2d5ed);
@@ -1457,7 +1263,6 @@ button.btn-red.clicked {
   line-height: normal;
   height: 22px;
   border: 1px solid #b9b9b9;
-  color: #000000;
   background-color: #ffffff;
   padding: 3px 18px 3px 23px;
   margin: 0px;
@@ -1543,39 +1348,42 @@ button.btn-red.clicked {
   bottom: 0px;
 }
 .w2ui-grid .w2ui-grid-body .w2ui-grid-records table tr.w2ui-odd {
-  color: inherit;
-  background-color: #ffffff;
+  background-color: #477a00;
+    color: #ffffff;
 }
 .w2ui-grid .w2ui-grid-body .w2ui-grid-records table tr.w2ui-odd:hover {
-  color: inherit;
-  background-color: #e6f0ff;
+  color: #ffffff;
+  background-color: green;
+  cursor: pointer;
 }
 .w2ui-grid .w2ui-grid-body .w2ui-grid-records table tr.w2ui-odd.w2ui-empty-record:hover {
-  background-color: #ffffff;
+  background-color: #477a00;
+  cursor: default;
 }
 .w2ui-grid .w2ui-grid-body .w2ui-grid-records table tr.w2ui-even {
-  color: inherit;
-  background-color: #f3f6fa;
+  background-color: #80c000;
+    color: #ffffff;
 }
 .w2ui-grid .w2ui-grid-body .w2ui-grid-records table tr.w2ui-even:hover {
-  color: inherit;
-  background-color: #e6f0ff;
+  color: #ffffff;
+  background-color: green;
+  cursor: pointer;
 }
 .w2ui-grid .w2ui-grid-body .w2ui-grid-records table tr.w2ui-even.w2ui-empty-record:hover {
-  background-color: #f3f6fa;
+  background-color: #80c000;
+  cursor: default;
 }
 .w2ui-grid .w2ui-grid-body .w2ui-grid-records table tr.w2ui-selected,
 .w2ui-grid .w2ui-grid-body .w2ui-grid-records table tr td.w2ui-selected {
-  color: #000000 !important;
-  background-color: #b6d5ff !important;
+  /*background-color: #CCDCF0 !important;*/
 }
 .w2ui-grid .w2ui-grid-body .w2ui-grid-records .w2ui-expanded {
-  background-color: #CCDCF0 !important;
+  /*background-color: #CCDCF0 !important;*/
 }
 .w2ui-grid .w2ui-grid-body .w2ui-grid-records .w2ui-expanded1 {
   height: 0px;
   border-bottom: 1px solid #b2bac0;
-  background-color: #CCDCF0;
+  /*background-color: #CCDCF0;*/
 }
 .w2ui-grid .w2ui-grid-body .w2ui-grid-records .w2ui-expanded1 > div {
   height: 100%;
@@ -1615,17 +1423,26 @@ button.btn-red.clicked {
 }
 .w2ui-grid .w2ui-grid-body table .w2ui-head {
   margin: 0px;
-  padding: 0px;
+  padding: 0 3px 0 3px;
   border-right: 1px solid #c5c5c5;
   border-bottom: 1px solid #c5c5c5;
-  color: #000000;
-  background-image: -webkit-linear-gradient(#f9f9f9, #e4e4e4);
-  background-image: -moz-linear-gradient(#f9f9f9, #e4e4e4);
-  background-image: -ms-linear-gradient(#f9f9f9, #e4e4e4);
-  background-image: -o-linear-gradient(#f9f9f9, #e4e4e4);
-  background-image: linear-gradient(#f9f9f9, #e4e4e4);
+  color: green;
+  cursor: pointer;
+  background-image: -webkit-linear-gradient(#fdffe6, #fffa3b);
+  background-image: -moz-linear-gradient(#fdffe6, #fffa3b);
+  background-image: -ms-linear-gradient(#fdffe6, #fffa3b);
+  background-image: -o-linear-gradient(#fdffe6, #fffa3b);
+  background-image: linear-gradient(#fdffe6, #fffa3b);
   filter: progid:dximagetransform.microsoft.gradient(startColorstr='#fff9f9f9', endColorstr='#ffe4e4e4', GradientType=0);
 }
+.w2ui-head :hover {
+    color: #333;
+}
+
+.w2ui-overlay label {
+    font-weight: normal;
+}
+
 .w2ui-grid .w2ui-grid-body table .w2ui-head > div {
   padding: 7px 3px;
   white-space: nowrap;
@@ -1674,12 +1491,12 @@ button.btn-red.clicked {
 .w2ui-grid .w2ui-grid-body table td {
   border-right: 1px solid #d6d5d7;
   border-bottom: 0px solid #d6d5d7;
-  cursor: default;
+  /*cursor: default;*/
   overflow: hidden;
 }
 .w2ui-grid .w2ui-grid-body table td.w2ui-grid-data {
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0 5px 0 5px;
 }
 .w2ui-grid .w2ui-grid-body table td.w2ui-grid-data > div {
   padding: 3px 3px 3px 3px;
@@ -1698,7 +1515,7 @@ button.btn-red.clicked {
 .w2ui-grid .w2ui-grid-body table .w2ui-col-number {
   width: 34px;
   color: #777777;
-  background-color: rgba(233, 237, 243, 0.5);
+  /*background-color: rgba(233, 237, 243, 0.5);*/
 }
 .w2ui-grid .w2ui-grid-body table .w2ui-col-number div {
   padding: 0px 7px 0px 3px;
@@ -1830,17 +1647,14 @@ button.btn-red.clicked {
   display: inline-block;
   border-radius: 3px;
   cursor: pointer;
-  font-size: 11px;
   line-height: 16px;
   padding: 1px 5px;
   width: 30px;
   height: 18px;
   margin-top: -1px;
-  color: #000000;
   background-color: transparent;
 }
 .w2ui-grid .w2ui-grid-footer .w2ui-footer-center .w2ui-footer-nav a.w2ui-footer-btn:hover {
-  color: #000000;
   background-color: #aec8ff;
 }
 /* SpeadSheet */
@@ -1889,8 +1703,6 @@ button.btn-red.clicked {
   cursor: default;
 }
 .w2ui-overlay .w2ui-select-field table {
-  font-size: 11px;
-  font-family: Verdana, Arial, sans-serif;
   border-spacing: 0px;
   border-collapse: border-collapse;
 }
@@ -1914,7 +1726,7 @@ button.btn-red.clicked {
   border-collapse: border-collapse;
 }
 .w2ui-overlay .w2ui-col-on-off table tr:hover {
-  background-color: #b6d5ff;
+  background-color: #f8f8f8;
 }
 .w2ui-overlay .w2ui-col-on-off table td input[type=checkbox] {
   margin: 3px 2px 2px 2px;
@@ -2015,7 +1827,6 @@ button.btn-red.clicked {
   position: fixed;
   z-index: 1600;
   overflow: hidden;
-  font-family: Verdana, Arial, sans-serif;
   border-radius: 6px;
   padding: 0px;
   margin: 0px;
@@ -2055,7 +1866,6 @@ button.btn-red.clicked {
   -o-user-select: none;
   user-select: none;
   cursor: move;
-  font-size: 15px;
   color: #555555;
   z-index: 300;
 }
@@ -2098,10 +1908,8 @@ button.btn-red.clicked {
   z-index: 100;
 }
 .w2ui-popup .w2ui-msg-body {
-  font-size: 13px;
   line-height: 130%;
   padding: 0px 7px 7px 7px;
-  color: #000000;
   background-color: #eeeeee;
   position: absolute;
   overflow: auto;
@@ -2217,7 +2025,6 @@ button.btn-red.clicked {
 .w2ui-sidebar .w2ui-sidebar-div .w2ui-node .w2ui-node-image,
 .w2ui-sidebar .w2ui-sidebar-div .w2ui-node .w2ui-node-image > span,
 .w2ui-sidebar .w2ui-sidebar-div .w2ui-node td.w2ui-node-dots {
-  color: #000000;
   text-shadow: 0px 0px 0px #ffffff;
   pointer-events: none;
 }
@@ -2281,7 +2088,6 @@ button.btn-red.clicked {
 .w2ui-sidebar .w2ui-sidebar-div .w2ui-disabled:hover td.w2ui-node-dots {
   opacity: 0.4;
   filter: alpha(opacity=40);
-  color: #000000 !important;
   text-shadow: 0px 0px 0px #ffffff !important;
 }
 .w2ui-sidebar .w2ui-sidebar-div .w2ui-node-caption {
@@ -2290,7 +2096,6 @@ button.btn-red.clicked {
   margin: 1px 0px 1px 22px;
   position: relative;
   z-index: 1;
-  font-size: 12px;
 }
 .w2ui-sidebar .w2ui-sidebar-div .w2ui-node-group {
   white-space: nowrap;
@@ -2333,8 +2138,6 @@ button.btn-red.clicked {
   float: left;
 }
 .w2ui-sidebar .w2ui-sidebar-div td.w2ui-node-data .w2ui-node-image > span {
-  font-size: 16px;
-  color: #000000;
   text-shadow: 0px 0px 0px #ffffff;
 }
 .w2ui-sidebar .w2ui-sidebar-div td.w2ui-node-data .w2ui-node-image.w2ui-icon {
@@ -2372,7 +2175,6 @@ button.btn-red.clicked {
 .w2ui-tabs .w2ui-tab {
   padding: 6px 20px;
   text-align: center;
-  color: #000000;
   background-color: transparent;
   border: 1px solid #c0c0c0;
   border-bottom: 1px solid silver;
@@ -2383,7 +2185,6 @@ button.btn-red.clicked {
   cursor: default;
 }
 .w2ui-tabs .w2ui-tab.active {
-  color: #000000;
   background-color: #ffffff;
   border: 1px solid #c0c0c0;
   border-bottom: 1px solid transparent;
@@ -2458,13 +2259,12 @@ button.btn-red.clicked {
   text-align: center;
 }
 .w2ui-toolbar table.w2ui-button .w2ui-tb-image > span {
-  font-size: 15px;
   margin-top: 3px;
   display: block;
   color: #8d99a7;
+  /*cursor: pointer;*/
 }
 .w2ui-toolbar table.w2ui-button .w2ui-tb-caption {
-  color: #000000;
   padding: 0px 4px 0px 2px;
 }
 .w2ui-toolbar table.w2ui-button .w2ui-tb-count {
@@ -2494,7 +2294,6 @@ button.btn-red.clicked {
   background-color: #eeeeee;
 }
 .w2ui-toolbar table.w2ui-button.over .w2ui-tb-caption {
-  color: #000000;
 }
 .w2ui-toolbar table.w2ui-button.down {
   border: 1px solid #aaaaaa;
@@ -2508,7 +2307,6 @@ button.btn-red.clicked {
   background-color: #ffffff;
 }
 .w2ui-toolbar table.w2ui-button.checked .w2ui-tb-caption {
-  color: #000000;
 }
 .w2ui-toolbar table.w2ui-button table {
   height: 17px;
@@ -2599,14 +2397,11 @@ button.btn-red.clicked {
   text-align: center;
   word-wrap: break-word;
   max-height: 50px;
-  color: #000000;
-  font-size: 12px;
 }
 .w2ui-listview > ul > li > div > div.description {
   display: none;
   text-align: left;
   color: #777777;
-  font-size: 12px;
 }
 .w2ui-listview > ul > li > div > div.extra {
   display: none;
@@ -2735,7 +2530,7 @@ button.btn-red.clicked {
 }
 .w2ui-table > ul > li > div > div.extra > div > div {
   display: inline-block;
-  font-size: 12px;
+
 }
 .w2ui-table > ul > li.w2ui-selected div.extra,
 .w2ui-table > ul > li.w2ui-selected.hover div.extra {
